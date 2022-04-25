@@ -1,11 +1,111 @@
-.right {
-
-}
-
-.left {
-
+.products {
+    margin-top: 150px;
 }
 
 .singleProduct {
-    
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    border-radius: 50px;
+    align-items: center;
+    height: 448px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.singleProduct.right {
+    background-position: 105%;
+    background-color: #F0FFE2;
+}
+
+.singleProduct.left {
+    background-color: #FFF3D7;
+    flex-direction: row-reverse;
+    background-position: -10%;
+}
+
+.textContent {
+    width: 30%;
+}
+
+.singleProduct.right .textContent {
+    margin-left: 5%;
+}
+
+.singleProduct.right .imageContent {
+    margin-right: 5%;
+}
+
+
+.singleProduct.left .textContent {
+    margin-right: 5%;
+}
+
+.singleProduct.left .imageContent {
+    margin-left: 5%;
+}
+
+.title {
+    font-size: 3em;
+    color: #845B1B;
+    margin-bottom: 30px;
+    font-weight: 800;
+}
+
+.description {
+    color: #845B1B;
+    margin-bottom: 30px;
+}
+
+.imageWrapper {
+    background-color: #393939;
+    width: 362px;
+    height: 362px;
+    border-radius: 40px;
+    position: relative;
+}
+
+.imageWrapper img {
+    display: block;
+    position: absolute;
+    top: 18%;
+    left: 17%;
+}
+
+button.action {
+    background-color: #ADDA26;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #845B1B;
+    font-weight: 600;
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 25%);
+    text-transform: none;
+}
+
+button.action:hover {
+    background-color: #ADDA26;
+    color: #845B1B;
+    box-shadow: 4px 4px 6px rgb(0 0 0 / 25%);
+}
+
+button.viewAll{
+    color: #845B1B;
+    width: fit-content;
+    padding-left: 20px;
+    font-weight: 400;
+    padding-bottom: 5px;
+    text-align: right;
+    background:
+        linear-gradient(to right,
+            #845B1B 50%,
+            #fff 50%) right bottom no-repeat;
+    background-size: 100% 2px;
+    text-transform: none;
+    font-size: 1.5em;
+    margin: 0 auto;
+    display: block;
+}
+
+button.viewAll:hover {
+    background-color: #fff;
 }

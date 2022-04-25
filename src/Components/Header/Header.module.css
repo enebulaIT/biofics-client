@@ -1,0 +1,47 @@
+.header {
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 10%;
+    display: flex;
+    margin-left: 3%;
+}
+
+.navbar {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar a {
+    color: #845B1B;
+    width: fit-content;
+    padding-left: 20px;
+    font-weight: 400;
+    padding-bottom: 5px;
+    text-align: right;
+    background:
+        linear-gradient(to right,
+            #845B1B 50%,
+            #fff 50%) right bottom no-repeat;
+    background-size: 100% 2px;
+}
+
+.navbar a:hover {
+    background:
+    linear-gradient(to left,
+        #845B1B 50%,
+        #fff 50%) left bottom no-repeat;
+    background-size: 100% 2px;
+}
+
+.userMenu {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}

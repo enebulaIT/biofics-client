@@ -55,7 +55,7 @@ const Problems = (props) => {
             </div>
 
             <Box className={classes.problemsContainer} sx={{ flexGrow: 1 }}>
-                <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                <Grid container spacing={{ xs: 2, md: 3 }} rowSpacing={25}>
                     { generateProblemItems() }
                 </Grid>
             </Box>

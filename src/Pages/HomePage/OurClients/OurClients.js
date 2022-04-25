@@ -9,6 +9,7 @@ import commonClasses from '../../../App.module.css';
 
 const settings = {
     dots: false,
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 6,

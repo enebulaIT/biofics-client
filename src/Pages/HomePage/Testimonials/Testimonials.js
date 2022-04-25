@@ -40,11 +40,12 @@ const Testimonials = (props) => {
                     </div>
                 </div>
             )
-        })
+        });
+
+        return elements
     }
 
     if(testimonailsData.length === 0) return null;
-
 
     return (
         <div className={classes.testimonails}>

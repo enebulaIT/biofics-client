@@ -45,7 +45,7 @@ const FeatsAcheived = (props) => {
                 <Grid container spacing={2} columns={12}>
                     <Grid item xs={4}>
                         <div className={classes.feat}>
-                            <div>
+                            <div className={classes.icon}>
                                 <img src={smallImg} alt="satisfied" />
                             </div>
 
@@ -54,7 +54,7 @@ const FeatsAcheived = (props) => {
                     </Grid>
                     <Grid item xs={4}>
                         <div className={classes.feat}>
-                            <div>
+                            <div className={classes.icon}>
                                 <img src={smallImg} alt="satisfied" />
                             </div>
 
@@ -63,7 +63,7 @@ const FeatsAcheived = (props) => {
                     </Grid>
                     <Grid item xs={4}>
                         <div className={classes.feat}>
-                            <div>
+                            <div className={classes.icon}>
                                 <img src={smallImg} alt="satisfied" />
                             </div>
 

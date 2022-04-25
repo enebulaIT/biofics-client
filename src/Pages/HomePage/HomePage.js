@@ -26,16 +26,15 @@ const HomePage = () => {
                 <Problems setLoading = {setLoading}/>
             </section>
             
-            <section className={classes.generalSection}>
+            <section className={`${classes.generalSection} ${commonClasses.container}`}>
                 <FeatsAcheived setLoading = {setLoading}/>
                 <FeaturedProducts setLoading = {setLoading}/>
                 <Services />
             </section>
 
-            <section className={classes.clients}>
+            <section className={ `${classes.clients}` }>
                 <OurClients setLoading = {setLoading}/>
                 <Testimonials setLoading = {setLoading}/>
-
             </section>
         </div>
     )

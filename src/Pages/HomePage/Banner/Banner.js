@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import api from '../../../Api/publicApi';
 import Slider from "react-slick";
+import bgLeavesImage from '../../../assets/images/bgLeaves.png';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import classes from './Banner.module.css';
@@ -38,18 +39,22 @@ const Banner = (props) => {
         bannerData.forEach(banner => {
             elements.push(
                 <div className={classes.item} key = {banner.id}>
-                    <div className={classes.text}>
-                        <div className={classes.title}>
-                            {banner.attributes.Title}
+                    <div className={classes.itemWrapper}>
+                        <div className={classes.text}>
+                            <div className={classes.title}>
+                                {banner.attributes.Title}
+                            </div>
+                            <div className={classes.description}>
+                                {banner.attributes.Description}
+                            </div>
                         </div>
-                        <div className={classes.description}>
-                            {banner.attributes.Description}
-                        </div>
-                    </div>
 
-                    <div className={classes.image}>
-                        <div className={classes.imageWraper}>
-                            <img src = {`${process.env.REACT_APP_STRAPI_BASE_URL}${banner.attributes.BannerImage.data.attributes.url}`}  alt = "banner"/>
+                        <div className={classes.image} style = {{
+                            backgroundImage: `url(${bgLeavesImage})`,
+                        }}>
+                            <div className={classes.imageWraper}>
+                                <img src = {`${process.env.REACT_APP_STRAPI_BASE_URL}${banner.attributes.BannerImage.data.attributes.url}`}  alt = "banner"/>
+                            </div>
                         </div>
                     </div>
                 </div>
