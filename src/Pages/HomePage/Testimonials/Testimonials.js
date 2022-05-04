@@ -1,6 +1,18 @@
 import { useEffect, useState } from "react";
 import api from '../../../Api/publicApi';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import classes from './Testimonials.module.css';
+
+const settings = {
+    dots: false,
+    arrows: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+};
 
 const Testimonials = (props) => {
 
@@ -25,7 +37,7 @@ const Testimonials = (props) => {
         const elements = [];
         testimonailsData.forEach(testimonial => {
             elements.push(
-                <div key = {testimonial.id} className={classes.testimonail}>
+                <div key = {testimonial.id} className={classes.testimonial}>
                     <div className={classes.image}>
                         <img src = {`${process.env.REACT_APP_STRAPI_BASE_URL}${testimonial.attributes.Image.data.attributes.url}`}  alt = "testimonial"/>
                     </div>
@@ -54,7 +66,9 @@ const Testimonials = (props) => {
             </div>
 
             <div className={classes.testimonailsSection}>
-                { generateTestimonialsItems() }
+                <Slider {...settings}>
+                    { generateTestimonialsItems() }
+                </Slider>
             </div>
         </div>
     )

@@ -1,6 +1,7 @@
 import { Button, TextField } from '@mui/material';
 import { useState } from 'react';
 import classes from './NewsLetterForm.module.css';
+import commonClasses from '../../App.module.css';
 
 const NewsLetterForm = () => {
 
@@ -12,17 +13,17 @@ const NewsLetterForm = () => {
     }
 
     return (
-        <div>
-            <TextField 
+        <>
+            <TextField
                 value={emailVal}
                 onChange={e => setEmailVal(e.target.value)}
-                type="email" 
-                label="Email" 
-                className={classes.input} 
+                type="email"
+                label="Email"
+                className={classes.input}
                 variant="outlined" />
 
-            <Button disableRipple onClick={handleSubmit}>Subscribe</Button>
-        </div>
+            <Button className={commonClasses.btn1} disableRipple onClick={handleSubmit}>Subscribe</Button>
+        </>
     )
 }
 

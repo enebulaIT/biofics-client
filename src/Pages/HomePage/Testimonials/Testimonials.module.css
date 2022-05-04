@@ -1,0 +1,46 @@
+.testimonails {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 70px;
+    padding-bottom: 60px;
+}
+
+.textSection {
+    width: 40%;
+    margin-top: 100px;
+    font-size: 3em;
+    color: #7E8144;
+}
+
+.testimonailsSection {
+    width: 60%;
+}
+
+.testimonial {
+    display: flex !important;
+    flex-direction: column;
+    width: 70% !important;
+    margin: 0 auto;
+}
+
+.image {
+    max-width: 310px;
+    max-height: 199px;
+}
+
+.info {
+    margin-top: 23px;
+}
+
+.name {
+    font-size: 2em;
+    font-weight: 700;
+    color: #845B1B;
+}
+
+.description {
+    margin-top: 23px;
+    max-width: 310px;
+    color: #72786C;
+}

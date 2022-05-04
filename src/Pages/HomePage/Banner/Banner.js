@@ -5,6 +5,7 @@ import bgLeavesImage from '../../../assets/images/bgLeaves.png';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import classes from './Banner.module.css';
+import BgImage from '../../../assets/images/bgBanner.png';
 
 const settings = {
     dots: false,
@@ -13,6 +14,10 @@ const settings = {
     slidesToShow: 1,
     slidesToScroll: 1
 };
+
+const bannerStyles = {
+    backgroundImage: `url(${BgImage})`
+}
 
 const Banner = (props) => {
 
@@ -66,7 +71,7 @@ const Banner = (props) => {
     if(bannerData.length === 0) return null;
 
     return (
-        <div className={classes.banner}>
+        <div className={classes.banner} style = {bannerStyles}>
             <Slider {...settings}>
                 { generateBannerItems() }
             </Slider>

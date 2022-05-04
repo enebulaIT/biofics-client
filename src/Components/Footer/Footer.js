@@ -6,6 +6,12 @@ import classes from './Footer.module.css';
 import { nav } from "../../nav";
 import { Link } from "react-router-dom";
 import NewsLetterForm from '../../Components/NewsLetterForm/NewsLetterForm';
+import bgImage from '../../assets/images/bgFooter.png';
+import commonClasses from '../../App.module.css';
+
+const styles = {
+    backgroundImage: `url(${bgImage})`
+}
 
 const Footer = () => {
 
@@ -16,7 +22,7 @@ const Footer = () => {
     }
 
     return (
-        <div className={classes.footer}>
+        <div className={`${classes.footer} ${commonClasses.container}`} style = {styles}>
             <div className={classes.footerWrapper}>
                 <Grid container spacing={2}>
                     <Grid item xs={3}>
@@ -55,7 +61,7 @@ const Footer = () => {
                         </div>
                     </Grid>
                     <Grid item xs={3}>
-                        <div className={classes.column}>
+                        <div className={`${classes.column} ${classes.form}`}>
                             <div className={classes.title}>
                                 NewsLetter
                             </div>
