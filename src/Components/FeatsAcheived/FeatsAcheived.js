@@ -1,7 +1,7 @@
 import { Box, Grid } from '@mui/material';
 import { useEffect, useState } from 'react';
-import api from '../../../Api/publicApi';
-import smallImg from '../../../assets/images/featsImg.png';
+import api from '../../Api/publicApi';
+import smallImg from '../../assets/images/featsImg.png';
 import classes from './FeatsAcheived.module.css';
 
 const FeatsAcheived = (props) => {

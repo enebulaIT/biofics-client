@@ -2,6 +2,9 @@ import React from 'react';
 
 const HomePage = React.lazy(() => import('./Pages/HomePage/HomePage'));
 const About = React.lazy(() => import('./Pages/About/About'));
+const Contact = React.lazy(() => import('./Pages/Contact/Contact'));
+const Products = React.lazy(() => import('./Pages/Products/Products'));
+const Services = React.lazy(() => import('./Pages/Services/Services'));
 
 const routes = [
     {
@@ -15,6 +18,24 @@ const routes = [
         title: 'about',
         component: About,
         path: '/about'
+    },
+    {
+        id: 1,
+        title: 'services',
+        component: Services,
+        path: '/services'
+    },
+    {
+        id: 1,
+        title: 'products',
+        component: Products,
+        path: '/products'
+    },
+    {
+        id: 1,
+        title: 'contact',
+        component: Contact,
+        path: '/contact'
     }
 ]
 

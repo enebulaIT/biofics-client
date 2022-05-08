@@ -3,6 +3,8 @@ import routes from './routes';
 import Layout from './Layouts/Layout1/Layout1';
 import NotFound from './Pages/NotFound/NotFound';
 import './App.css';
+import { Suspense } from 'react';
+import Loading from './Pages/Loading/Loading';
 
 function App() {
 
@@ -15,14 +17,16 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-            <Route path = "/" element = {<Layout/>}>
-            { getRoutes() }
-            </Route>
-            <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <Suspense fallback={<Loading />}>
+        <BrowserRouter>
+          <Routes>
+              <Route path = "/" element = {<Layout/>}>
+              { getRoutes() }
+              </Route>
+              <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </Suspense>
     </div>
   );
 }

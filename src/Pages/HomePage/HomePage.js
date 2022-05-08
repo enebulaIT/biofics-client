@@ -4,11 +4,11 @@ import classes from './HomePage.module.css';
 import commonClasses from '../../App.module.css';
 import PageLoader from '../../Components/PageLoader/PageLoader';
 import Problems from './Problems/Problems';
-import FeatsAcheived from './FeatsAcheived/FeatsAcheived';
 import FeaturedProducts from './FeaturedProducts/FeaturedProducts';
 import Services from './Services/Services';
 import OurClients from './OurClients/OurClients';
 import Testimonials from './Testimonials/Testimonials';
+import FeatsAcheived from '../../Components/FeatsAcheived/FeatsAcheived';
 
 const HomePage = () => {
 

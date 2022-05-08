@@ -54,7 +54,7 @@ const Header = () => {
                 {generateMainNav()}
             </div>
 
-            <dv className={classes.userMenu}>
+            <div className={classes.userMenu}>
                 <Button
                     id="basic-button"
                     aria-controls={open ? 'basic-menu' : undefined}
@@ -75,7 +75,7 @@ const Header = () => {
                 >
                     {generateUserMenu()}
                 </Menu>
-            </dv>
+            </div>
         </div>
     )
 }

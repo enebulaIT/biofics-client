@@ -11,12 +11,12 @@ const nav = [
     },
     {
         id: "3",
-        to: "/contact-us",
+        to: "/contact",
         label: "Contact Us"
     },
     {
         id: "4",
-        to: "/about-us",
+        to: "/about",
         label: "About Us"
     }
 ];

@@ -9,10 +9,13 @@ import BgImage from '../../../assets/images/bgBanner.png';
 
 const settings = {
     dots: false,
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000
 };
 
 const bannerStyles = {
