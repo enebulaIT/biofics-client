@@ -26,14 +26,14 @@ const About = () => {
         fetchData();
     }, [])
 
-    console.log('aboutPageContent', aboutPageContent?.attributes?.WhoWeAre?.Content)
-
     return (
         <div className={classes.container}>
             { loading && <PageLoader/> }
 
             <div className={classes.aboutPage}>
-                <Hero title= "About Biofics" description = "Adaptation of Green India"/>
+                <Hero title= "About Biofics" />
+
+                <h6 className={classes.title}>{'Who we are?'}</h6>
                 
                 <div className={classes.whoweare}>
                     <div className={classes.text} dangerouslySetInnerHTML = {{__html: aboutPageContent?.attributes?.WhoWeAre?.Content}}>
@@ -41,21 +41,27 @@ const About = () => {
                     </div>
 
                     <div className={classes.image}>
-
+                        <img src={`${process.env.REACT_APP_STRAPI_BASE_URL}${aboutPageContent?.attributes?.WhoWeAre?.Image}`} alt="WhoWeAre" />
                     </div>
                 </div>
 
-                <div className={classes.mission}>
-                    
+                <h6 className={`${classes.title} ${classes.txt_align_center}`}>{'Our Mission'}</h6>
+
+                <div className={classes.attributes} >
+                    <div className={classes.attributes_txt} dangerouslySetInnerHTML = {{__html: aboutPageContent?.attributes?.Mission}}>
+                    </div>
                 </div>
 
-                <div className={classes.vision}>
+                <h6 className={`${classes.title} ${classes.txt_align_center}`}>{'Our Vision'}</h6>
 
+                <div className={classes.attributes} >
+                    <div className={classes.attributes_txt} dangerouslySetInnerHTML = {{__html: aboutPageContent?.attributes?.Vision}}>
+                    </div>
                 </div>
 
                 <FeatsAcheived setLoading ={setLoading}/>
 
-                <OurTeam/>
+                <OurTeam setLoading ={setLoading}/>
             </div>
 
         </div>

@@ -15,9 +15,9 @@ const Hero = props => {
                 {props.title}
             </div>
 
-            <div className={classes.description}>
+            {/* <div className={classes.description}>
                 {props.description}
-            </div>
+            </div> */}
         </div>
     )
 }
