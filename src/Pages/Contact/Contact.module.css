@@ -13,12 +13,16 @@
     width: 100%;
 }
 
+.pitchus h6 {
+    width: 100%;
+    text-align: center;
+}
+
 .title {
     font-size: 2.5em;
     font-family: 'M PLUS Rounded 1c';
     font-weight: 800;
-    width: 100%;
-    text-align: center;
+    /* width: 100%; */
     color: #845b1b;
 }
 
@@ -51,6 +55,11 @@ button.submit:hover {
 
 .careers {
     margin: 45px 180px;
+}
+
+.careers h6 {
+    width: 100%;
+    text-align: center;
 }
 
 .input {
@@ -96,6 +105,8 @@ button.submit:hover {
 
 .contactUsForm {
     margin: 0px 69px;
+    display: flex;
+    align-items: center;
 }
 
 .questionnaire {
@@ -106,8 +117,20 @@ button.submit:hover {
     margin-top: 35px;
     margin-bottom: 35px;
     border-radius: 40px;
-    align-items: center;
     padding: 50px;
+}
+
+.questionnaire .title {
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.questionnaireDetail .input {
+    margin-top: 60px;
+}
+
+.questionnaireDetail {
+    width: 70%;
 }
 
 .getInTouch {
@@ -120,21 +143,155 @@ button.submit:hover {
     display: flex;
     padding: 60px;
     flex-direction: column;
-}
-
-.subTitle {
-    margin-top: 10px;
-    color: #845b1b;
+    align-self: center;
     text-align: center;
 }
 
-.commonInfo {
-    display: flex;
-    /* align-self: center; */
-    flex-direction: row;
-    background-color: #adda26;
+.getInTouch .title {
+    margin-top: 10px;
 }
 
-.commonInfo svg {
-    stroke: #845B1B
+.subTitle {
+    margin-top: 15px;
+    color: #845b1b;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
+
+/* .info.subTitle {
+    justify-content: flex-start;
+} */
+
+.commonInfo {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+}
+
+.iconsList {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 120px 0px;
+}
+
+.pinImg {
+    height: 45px;
+    width: 45px;
+}
+
+@media only screen and (max-width: 600px) {
+    .contactPage {
+        margin: 0px 20px;
+    }
+
+    .contactUsForm {
+        margin: 0px 20px;
+        flex-direction: column-reverse;
+    }
+
+    .getInTouch {
+        position: static;
+        margin-bottom: 20px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .questionnaire {
+        width: -webkit-fill-available;
+        height: 553px;
+        padding: 40px;
+        margin-bottom: 20px;
+    }
+
+    .questionnaireDetail {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .questionnaireDetail .input {
+        margin-top: 20px;
+    }
+
+    .questionnaire .title {
+        margin-top: 0px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    button.submit {
+        margin: 0px 0px;
+        margin-top: 20px;
+        width: 102px;
+        height: 30px;
+        border-radius: 5px;
+        align-self: center;
+        font-size: 14px;
+    }
+
+    .getInTouch {
+        width: -webkit-fill-available;
+        height: 572px;
+        padding: 40px;
+    }
+
+    .commonInfo svg {
+        height: 24px;
+        width: 24px;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
+    .commonInfo {
+        padding-top: 40px;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 0px;
+    }
+
+    .info {
+        margin-left: 0px;
+        width: 172px;
+    }
+
+    .subTitle {
+        margin-top: 10px;
+    }
+
+    .info .subTitle {
+        justify-content: flex-start;
+    }
+
+    .pinImg {
+        height: auto;
+        width: auto;
+    }
+
+    .iconsList {
+        margin-top: 60px;
+        height: 42px;
+        justify-content: space-evenly;
+    }
+
+    .iconsList svg {
+        /* height: 42px; */
+        width: 45px;
+    }
+
+    .pitchus, .careers {
+        display: none;
+    }
 }

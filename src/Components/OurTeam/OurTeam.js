@@ -31,20 +31,20 @@ const OurTeam = (props) => {
         <Grid container spacing={2} columns={12}>
           {teamsData.map((item) => {
             return (
-              <Grid item xs={4}>
+              <Grid item md={4} sm={6} xs={6}>
                 <div className={classes.teams}>
                   <div className={classes.team_img}>
                     <img
                       src={`${process.env.REACT_APP_STRAPI_BASE_URL}${item?.attributes?.Image?.data?.attributes?.formats?.thumbnail?.url}`}
                       alt='team'
                     />
-                    <h1 className={classes.name_title}>
+                  </div>
+                  <h1 className={classes.name_title}>
                       {item?.attributes?.Title}
                     </h1>
                     <p className={classes.designation}>
                       {item?.attributes?.Designation}
                     </p>
-                  </div>
                 </div>
               </Grid>
             );

@@ -37,3 +37,31 @@
     margin-top: 5px;
     margin-right: 10px;
 }
+
+@media only screen and (max-width: 600px) {
+
+    .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 15px;
+    }
+    .content{
+        width: 80%;
+    }
+
+    .socials svg {
+        height: 18px;
+        width: 18px;
+    }
+
+    .phone svg, .email svg {
+        height: 16px;
+        width: 16px;
+        margin-right: 5px;
+    }
+    .phone a, .email a {
+        font-size: 10px;
+    }
+
+}

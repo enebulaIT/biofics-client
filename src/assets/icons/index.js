@@ -5,6 +5,13 @@ import TwitterIcon from './twitterIcon';
 import PhoneIcon from './phoneIcon';
 import MailIcon from './mailIcon';
 import UserIcon from './userIcon';
+import FacebookIconBrown from './facebookIcon_brown';
+import InstagramIconBrown from './instagramIcon_brown';
+import LinkedinIconBrown from './linkedin_brown';
+import MailIconBrown from './mailIcon_brown';
+import MapPinIconBrown from './mappinicon_brown';
+import PhoneIconBrown from './phoneIcon_brown';
+import TwitterIconBrown from './twitterIcon_brown';
 
 export {
     LinkedinIcon,
@@ -13,5 +20,12 @@ export {
     TwitterIcon,
     PhoneIcon,
     MailIcon,
-    UserIcon
+    UserIcon,
+    FacebookIconBrown,
+    InstagramIconBrown,
+    LinkedinIconBrown,
+    MailIconBrown,
+    MapPinIconBrown,
+    PhoneIconBrown,
+    TwitterIconBrown
 }

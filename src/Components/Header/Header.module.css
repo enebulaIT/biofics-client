@@ -59,3 +59,19 @@
     display: flex;
     justify-content: center;
 }
+
+
+@media only screen and (max-width: 600px) {
+    /* .logo {
+        width: 75px;
+        height: 51px;
+    } */
+
+    .navbar {
+        display: none;
+    }
+    .userMenu{
+        flex: 1;
+        justify-content: flex-end;
+    }
+}

@@ -25,14 +25,14 @@ const Footer = () => {
         <div className={`${classes.footer} ${commonClasses.container}`} style = {styles}>
             <div className={classes.footerWrapper}>
                 <Grid container spacing={2}>
-                    <Grid item xs={3}>
+                    <Grid item md={3} sm={12} xs={12}>
                         <div className={classes.logo}>
                             <a href="/">
                                 <img src={Logo} alt="Logo" />
                             </a>
                         </div>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item md={3} sm={12} xs={12}>
                         <div className={classes.column}>
                             <div className={classes.title}>
                                 Cert./Logos
@@ -44,12 +44,12 @@ const Footer = () => {
                                 </div>
 
                                 <div>
-                                    <img src={Cert2} alt="certificate" />
+                                    <img src={Cert2} className={classes.bulb} alt="certificate" />
                                 </div>
                             </div>
                         </div>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item md={3} sm={12} xs={12}>
                         <div className={classes.column}>
                             <div className={classes.title}>
                                 Useful Links
@@ -60,7 +60,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item md={3} sm={12} xs={12}>
                         <div className={`${classes.column} ${classes.form}`}>
                             <div className={classes.title}>
                                 NewsLetter

@@ -5,17 +5,27 @@ import { useEffect, useState, useRef } from 'react';
 import PageLoader from '../../Components/PageLoader/PageLoader';
 import { Button, TextField, Box, Grid } from '@mui/material';
 import {
-  FacebookIcon,
-  InstagramIcon,
-  LinkedinIcon,
-  MailIcon,
-  PhoneIcon,
-  TwitterIcon,
+  FacebookIconBrown,
+  InstagramIconBrown,
+  LinkedinIconBrown,
+  MapPinIconBrown,
+  TwitterIconBrown,
+  PhoneIconBrown,
+  MailIconBrown,
 } from '../../assets/icons';
 import { EMAIL, PHONE, SOCIAL_URLS } from '../../constants';
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [mobileNumber, setMobileNumber] = useState('');
+  const [email, setEmail] = useState('');
+  const [comments, setComments] = useState('');
+  const [careerEmail, setCareerEmail] = useState('');
+  const [careerFirstName, setCareerFirstName] = useState('');
+  const [careerLastName, setCareerLastName] = useState('');
+  const [careerSelectPosition, setCareerSelectPosition] = useState('');
   const [file, setFile] = useState('');
   const inputFile = useRef(null);
 
@@ -35,14 +45,108 @@ const Contact = () => {
         <Hero title='Contact Us' />
       </div>
       <div className={classes.contactUsForm}>
-        <div className={classes.questionnaire}>
-          <div className={classes.getInTouch}>
-            <h6 className={classes.title}>{'Get in touch'}</h6>
-            <div className={classes.subTitle}>Lorem Ipsum, Lorem Ipsum</div>
+        <div className={classes.getInTouch}>
+          <h6 className={classes.title}>{'Get in touch'}</h6>
+          <div className={classes.subTitle}>Lorem Ipsum, Lorem Ipsum</div>
 
-            <div className={classes.commonInfo}>
-              <PhoneIcon />
+          <div className={classes.commonInfo}>
+            <PhoneIconBrown />
+
+            <div className={classes.info}>
+              <div className={classes.subTitle}>+91 98658-69706</div>
+              <div className={classes.subTitle}>+91 98658-69706</div>
             </div>
+          </div>
+
+          <div className={classes.commonInfo}>
+            <MailIconBrown />
+
+            <div className={classes.info}>
+              <div className={classes.subTitle}>info@biofics.com</div>
+              <div className={classes.subTitle}>info@biofics.com</div>
+            </div>
+          </div>
+
+          <div className={classes.commonInfo}>
+            <div className={classes.pinImg}>
+              <MapPinIconBrown />
+            </div>
+
+            <div className={classes.info}>
+              <div className={classes.subTitle}>
+                2, Patel Nagar, Navagam, Udhna, Surat-394210, Gujarat, India
+              </div>
+            </div>
+          </div>
+
+          <div className={classes.iconsList}>
+            <LinkedinIconBrown />
+            <FacebookIconBrown />
+            <InstagramIconBrown />
+            <TwitterIconBrown />
+          </div>
+        </div>
+        <div className={classes.questionnaire}>
+          <div className={classes.questionnaireDetail}>
+            <h6 className={classes.title}>{'Got a Question?'}</h6>
+            <Box>
+              <Grid container columns={12} spacing={2}>
+                <Grid item xs={6}>
+                  <TextField
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    type='text'
+                    label='F. Name'
+                    className={classes.input}
+                    fullWidth
+                  />
+                </Grid>
+                <Grid item xs={6}>
+                  <TextField
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    type='text'
+                    label='L. Name'
+                    className={classes.input}
+                    fullWidth
+                  />
+                </Grid>
+              </Grid>
+            </Box>
+
+            <TextField
+              value={mobileNumber}
+              onChange={(e) => setMobileNumber(e.target.value)}
+              inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
+              label='Mobile Number'
+              className={classes.input}
+              fullWidth={true}
+            />
+
+            <TextField
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type='email'
+              label='Email'
+              className={classes.input}
+              fullWidth={true}
+            />
+
+            <TextField
+              value={comments}
+              onChange={(e) => setComments(e.target.value)}
+              type='text'
+              label='Comments'
+              className={classes.input}
+              inputProps={{}}
+              fullWidth={true}
+              multiline={true}
+              rows={6}
+            />
+
+            <Button className={classes.submit} disableRipple onClick={() => {}}>
+              Submit
+            </Button>
           </div>
         </div>
       </div>
@@ -69,10 +173,10 @@ const Contact = () => {
             <Grid container columns={12} spacing={24}>
               <Grid item xs={6}>
                 <TextField
-                  // value={emailVal}
-                  // onChange={(e) => setEmailVal(e.target.value)}
-                  type='email'
-                  label='Email'
+                  value={careerFirstName}
+                  onChange={(e) => setCareerFirstName(e.target.value)}
+                  type='text'
+                  label='F. Name'
                   className={classes.input}
                   fullWidth
                   sx={{ marginTop: '35px' }}
@@ -80,10 +184,10 @@ const Contact = () => {
               </Grid>
               <Grid item xs={6}>
                 <TextField
-                  // value={emailVal}
-                  // onChange={(e) => setEmailVal(e.target.value)}
-                  type='email'
-                  label='Email'
+                  value={careerLastName}
+                  onChange={(e) => setCareerLastName(e.target.value)}
+                  type='text'
+                  label='L. Name'
                   className={classes.input}
                   fullWidth
                   sx={{ marginTop: '35px' }}
@@ -93,10 +197,10 @@ const Contact = () => {
           </Box>
 
           <TextField
-            // value={emailVal}
-            // onChange={(e) => setEmailVal(e.target.value)}
-            type='email'
-            label='Email'
+            value={careerSelectPosition}
+            onChange={(e) => setCareerSelectPosition(e.target.value)}
+            type='text'
+            label='Select Position'
             className={classes.input}
             inputProps={{}}
             fullWidth
@@ -104,8 +208,8 @@ const Contact = () => {
           />
 
           <TextField
-            // value={emailVal}
-            // onChange={(e) => setEmailVal(e.target.value)}
+            value={careerEmail}
+            onChange={(e) => setCareerEmail(e.target.value)}
             type='email'
             label='Email'
             className={classes.input}
@@ -130,7 +234,7 @@ const Contact = () => {
               ref={inputFile}
               onChange={handleFileUpload}
               type='file'
-              accept='image/gif, image/jpeg, image/png'
+              accept='application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document'
             />
           </div>
         </div>

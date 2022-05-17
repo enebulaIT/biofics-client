@@ -53,3 +53,52 @@
     align-items: flex-start;
     flex-direction: column;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .footer {
+        background-size: 0px;
+        background-color: #F0FFE2;
+        height: 620px;
+        border-radius: 20px;
+        padding-top: 0px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .title {
+        font-size: 14px;
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .logo img {
+        width: 129px;
+        height: 90px;
+    }
+
+    .certs {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+    }
+    .certs div{
+        margin-bottom: 10px;
+    }
+
+    .certs .bulb {
+        height: 60px;
+        width: 38.3px;
+        margin-left: 60px;
+    }
+
+    .column{
+        align-items: baseline;
+        margin-top: 10px;
+    }
+
+    .nav a {
+        font-size: 14px;
+    }
+}

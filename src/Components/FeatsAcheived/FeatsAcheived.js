@@ -41,9 +41,9 @@ const FeatsAcheived = (props) => {
 
     return (
         <div className={classes.featsWrapper}>
-            <Box sx={{ flexGrow: 1 }}>
+            <Box sx={{ flexGrow: 1 , display: 'flex' }}>
                 <Grid container spacing={2} columns={12}>
-                    <Grid item xs={4}>
+                    <Grid item md={4} xs={12}>
                         <div className={classes.feat}>
                             <div className={classes.icon}>
                                 <img src={smallImg} alt="satisfied" />
@@ -52,7 +52,7 @@ const FeatsAcheived = (props) => {
                             {getFeat(1)}
                         </div>
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item md={4} xs={12}>
                         <div className={classes.feat}>
                             <div className={classes.icon}>
                                 <img src={smallImg} alt="satisfied" />
@@ -61,7 +61,7 @@ const FeatsAcheived = (props) => {
                             {getFeat(2)}
                         </div>
                     </Grid>
-                    <Grid item xs={4}>
+                    <Grid item md={4} xs={12}>
                         <div className={classes.feat}>
                             <div className={classes.icon}>
                                 <img src={smallImg} alt="satisfied" />

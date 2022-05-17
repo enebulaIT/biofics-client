@@ -19,10 +19,11 @@
 }
 
 .text {
+    display: flex;
+    flex-direction: column;
     margin-right: 80px;
     margin-top: 50px;
-    /* width: 75vw; */
-    /* padding: 50px; */
+    width: 100%;
 }
 
 .txt_align_center {
@@ -49,4 +50,31 @@
 
 .text p {
     margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+    .aboutPage {
+        margin: 0px 20px;
+    }
+
+    .title {
+        margin-top: 50px;
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .whoweare {
+        flex-direction: column;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .text p {
+        display: flex;
+        margin-top: 0px;
+    }
+
+    .image img {
+        width: 100%;
+    }
 }

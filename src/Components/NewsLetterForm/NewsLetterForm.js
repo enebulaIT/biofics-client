@@ -22,7 +22,7 @@ const NewsLetterForm = () => {
                 className={classes.input}
                 variant="outlined" />
 
-            <Button className={commonClasses.btn1} disableRipple onClick={handleSubmit}>Subscribe</Button>
+            <Button className={classes.btn1} disableRipple onClick={handleSubmit}>Subscribe</Button>
         </>
     )
 }
