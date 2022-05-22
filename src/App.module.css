@@ -7,6 +7,7 @@
     font-weight: 900;
     width: fit-content;
     margin: 0 auto;
+    color: #845B1B;
 }
 
 button.btn1 {
@@ -29,5 +30,14 @@ button.btn1:hover {
 @media only screen and (max-width: 600px) { 
     .container {
         margin: 0 20px;
+    }
+
+    .pageTitle {
+        font-size: 25px;
+    }
+}
+@media only screen and (min-width: 600px) and (max-width: 1024px){ 
+    .container {
+        margin: 0 30px;
     }
 }

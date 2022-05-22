@@ -3,10 +3,12 @@ import commonClasses from '../../../App.module.css';
 import { Box, Grid } from '@mui/material';
 import { useEffect, useState } from 'react';
 import api from '../../../Api/publicApi';
+import useWindowDimensions from '../../../utils/windowDimention';
 
 const Problems = (props) => {
 
     const [problemData, setProblemData] = useState([]);
+    const { width } = useWindowDimensions();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -27,7 +29,7 @@ const Problems = (props) => {
         const elements = [];
         problemData.forEach(problem => {
             elements.push(
-                <Grid item xs={2} sm={4} md={4} key={problem.id}>
+                <Grid item xs={6} sm={4} md={4} key={problem.id}>
                     <div className={classes.problemItem}>
                         <div className={classes.image}>
                             <img src = {`${process.env.REACT_APP_STRAPI_BASE_URL}${problem.attributes.Image.data.attributes.url}`} alt = "problem"/>
@@ -51,11 +53,11 @@ const Problems = (props) => {
     return (
         <div className={classes.problems}>
             <div className={commonClasses.pageTitle}>
-                How are we solving the problem?
+                {width <= 600 ? 'Why Us?' : 'How are we solving the problem?'}
             </div>
 
             <Box className={classes.problemsContainer} sx={{ flexGrow: 1 }}>
-                <Grid container spacing={{ xs: 2, md: 3 }} rowSpacing={25}>
+                <Grid container columns={12} spacing={{ xs: 2, md: 3 }} rowSpacing={width <= 600 ? 0 : 25}>
                     { generateProblemItems() }
                 </Grid>
             </Box>

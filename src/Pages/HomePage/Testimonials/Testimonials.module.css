@@ -44,3 +44,38 @@
     max-width: 310px;
     color: #72786C;
 }
+
+@media only screen and (max-width: 600px) {
+    .testimonails {
+        margin-top: 0px;
+        flex-direction: column;
+        padding: 0 35px;
+    }
+
+    .textSection {
+        margin-top: 30px;
+        width: 100%;
+        font-size: 40px;
+    }
+
+    .testimonailsSection {
+        width: 100%;
+    }
+
+    .testimonial {
+        width: 95% !important;
+        margin-top: 10px;
+    }
+
+    .image img {
+        border-radius: 25px;
+    }
+
+    .name {
+        font-size: 30px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+}

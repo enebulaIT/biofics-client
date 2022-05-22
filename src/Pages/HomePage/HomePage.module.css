@@ -7,3 +7,15 @@
     background-color: #F5F5F5;
     margin-bottom: 100px;
 }
+
+@media only screen and (max-width: 600px) {
+    .clients {
+        background-color: #FFFFFF;
+        margin-bottom: 50px;
+    }
+
+    .problems {
+        margin-top: 30px;
+        background-color: #FFFFFF;
+    }
+}

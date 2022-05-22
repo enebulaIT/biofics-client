@@ -16,6 +16,7 @@
     font-family: 'M PLUS Rounded 1c';
     font-weight: 800;
     margin-top: 100px;
+    color: #845B1B;
 }
 
 .text {
@@ -76,5 +77,32 @@
 
     .image img {
         width: 100%;
+    }
+}
+
+
+
+@media only screen and (min-width: 600px) and (max-width: 1024px){
+    .aboutPage {
+        margin: 0px 30px;
+    }
+    .image{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .image img {
+        /* width: 45vw;
+        height: 45vw; */
+    }
+
+    /* .text{
+        margin-right: 50px;
+    } */
+
+    .whoweare {
+        flex-direction: column;
     }
 }

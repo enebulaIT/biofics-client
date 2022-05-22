@@ -88,7 +88,7 @@ button.action:hover {
     box-shadow: 4px 4px 6px rgb(0 0 0 / 25%);
 }
 
-button.viewAll{
+button.viewAll {
     color: #845B1B;
     width: fit-content;
     padding-left: 20px;
@@ -108,4 +108,52 @@ button.viewAll{
 
 button.viewAll:hover {
     background-color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+    .products {
+        margin-top: 50px;
+    }
+    .textContent {
+        width: 38%;
+    }
+    .title {
+        font-size: 17px;
+        margin-bottom: 8px;
+    }
+
+    .description {
+        font-size: 8px;
+        margin-bottom: 8px;
+    }
+
+    .singleProduct {
+        height: 229px;
+        border-radius: 14px;
+    }
+
+    .imageWrapper {
+        height: 166px;
+        width: 166px;
+        border-radius: 11px;
+    }
+
+    .imageWrapper img {
+        height: 110px;
+        width: 110px;
+    }
+
+    button.action {
+        height: 27px;
+        width: 90px;
+        font-size: 9px;
+        padding: 0px 0px;
+        border-radius: 7px;
+    }
+
+    button.viewAll{
+        font-size: 11px;
+        padding-left: 0px;
+    }
+
 }

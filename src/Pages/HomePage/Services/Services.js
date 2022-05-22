@@ -15,7 +15,7 @@ const Services = () => {
             <div className={classes.servicesWrapper}>
                 <Box sx={{ flexGrow: 1 }}>
                     <Grid container spacing={2} columns={12}>
-                        <Grid item xs={4}>
+                        <Grid item xs={12} sm={12} md={4} lg={4}>
                             <div className={classes.service}>
                                 <div className={classes.image}>
                                     <img alt = "service" src = {ServiceImg1}/>
@@ -26,7 +26,7 @@ const Services = () => {
                             </div>
                         </Grid>
 
-                        <Grid item xs={4}>
+                        <Grid item xs={12} sm={12} md={4} lg={4}>
                             <div className={classes.service}>
                                 <div className={classes.image}>
                                     <img alt = "service" src = {ServiceImg2}/>
@@ -37,7 +37,7 @@ const Services = () => {
                             </div>
                         </Grid>
 
-                        <Grid item xs={4}>
+                        <Grid item xs={12} sm={12} md={4} lg={4}>
                             <div className={classes.service}>
                                 <div className={classes.image}>
                                     <img alt = "service" src = {ServiceImg3}/>

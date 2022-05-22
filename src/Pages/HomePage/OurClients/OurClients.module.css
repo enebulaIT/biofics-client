@@ -17,3 +17,20 @@
 .item img:hover {
     transform: scale(1.5);
 }
+
+@media only screen and (max-width: 600px) {
+
+    .clients {
+        padding-top: 20px;
+    }
+
+    .clientWrapper {
+        margin-top: 30px;
+    }
+
+    .item img{
+        width: 60%;
+        height: 150px;
+    }
+    
+}
