@@ -12,6 +12,7 @@ import MailIconBrown from './mailIcon_brown';
 import MapPinIconBrown from './mappinicon_brown';
 import PhoneIconBrown from './phoneIcon_brown';
 import TwitterIconBrown from './twitterIcon_brown';
+import HamburgerIcon from './hamburgerIcon';
 
 export {
     LinkedinIcon,
@@ -27,5 +28,6 @@ export {
     MailIconBrown,
     MapPinIconBrown,
     PhoneIconBrown,
-    TwitterIconBrown
+    TwitterIconBrown,
+    HamburgerIcon
 }

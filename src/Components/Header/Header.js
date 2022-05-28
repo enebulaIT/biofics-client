@@ -1,9 +1,10 @@
 import { Button, Menu, MenuItem } from '@mui/material';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { UserIcon } from '../../assets/icons';
+import { UserIcon, HamburgerIcon } from '../../assets/icons';
 import Logo from '../../assets/images/Logo.png';
 import { nav } from '../../nav';
+import RightSideBar from '../RightSideBar/RightSideBar';
 import classes from './Header.module.css';
 
 const Header = () => {
@@ -11,6 +12,7 @@ const Header = () => {
     const navigate = useNavigate();
 
     const [anchorEl, setAnchorEl] = useState(null);
+    const [showSideBar, setShowSideBar] = useState(false);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
@@ -42,6 +44,21 @@ const Header = () => {
     }
 
 
+    // useEffect(() => {
+    //   console.log('hiiiiiii');
+    // }, [showSideBar])
+    
+
+
+    const HideSideBar = (event) => {
+        console.log('event', event);
+        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+            return;
+          }
+        setShowSideBar(false);
+    }   
+
+
     return (
         <div className={classes.header}>
             <div className={classes.logo}>
@@ -54,6 +71,7 @@ const Header = () => {
                 {generateMainNav()}
             </div>
 
+            <div className={classes.multipleMenu}>
             <div className={classes.userMenu}>
                 <Button
                     id="basic-button"
@@ -75,6 +93,21 @@ const Header = () => {
                 >
                     {generateUserMenu()}
                 </Menu>
+            </div>
+
+            <div className={classes.userMenu}>
+                <Button
+                    id="basic-button"
+                    // aria-controls={open ? 'basic-menu' : undefined}
+                    // aria-haspopup="true"
+                    // aria-expanded={open ? 'true' : undefined}
+                    onClick={() => setShowSideBar(true)}
+                >
+                    <HamburgerIcon/>
+                </Button>
+
+                <RightSideBar open={showSideBar} hide={HideSideBar}/>
+            </div>
             </div>
         </div>
     )
