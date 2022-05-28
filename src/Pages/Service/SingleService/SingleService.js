@@ -14,10 +14,11 @@ const SingleService = (props) => {
     }
 
     const allignMentClassName = productIndex % 2 === 0 ? '' : 'inverted';
+    const marginClassName = productIndex % 2 === 0 ? 'mr-20' : 'ml-20';
 
     return (
         <div className={`${classes.product} ${'single-product'} ${classes[allignMentClassName]}`}>
-            <div className={` ${classes.imagesContainer}`}>
+            <div className={` ${classes.imagesContainer}  ${classes[marginClassName]}`}>
                 <div className={classes.item}>
                     <div className={classes.imageWrapper}>
                         <img src={`${process.env.REACT_APP_STRAPI_BASE_URL}${serviceData.attributes.Thumbnail.data.attributes.url}`} alt="Service" />
@@ -38,7 +39,7 @@ const SingleService = (props) => {
                     </div>
 
                     <div className={classes.buttons}>
-                        <Button className={appClasses.btn1} disableRipple onClick={handleMoreDetails}>More Details</Button>
+                        <Button className={`${appClasses.btn1}`} disableRipple onClick={handleMoreDetails}>More Details</Button>
                         <Button className={appClasses.btn1} disableRipple onClick={getQuote}>Get Quote</Button>
                     </div>
                 </div>

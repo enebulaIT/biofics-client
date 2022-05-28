@@ -59,10 +59,11 @@ const SingleProduct = (props) => {
     }
 
     const allignMentClassName = productIndex % 2 === 0 ? '' : 'inverted';
+    const marginClassName = productIndex % 2 === 0 ? 'mr-20' : 'ml-20';
 
     return (
         <div className={`${classes.product} ${'single-product'} ${classes[allignMentClassName]}`}>
-            <div className={classes.imagesContainer}>
+            <div className={` ${classes.imagesContainer}  ${classes[marginClassName]}`}>
                 <Slider {...settings}>
                     {getImageElements()}
                 </Slider>

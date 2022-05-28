@@ -45,7 +45,7 @@ const Service = () => {
                 <Hero title='Our Services' />
             </div>
 
-            <div className={classes.productsWrapper}>
+            <div className={`${classes.productsWrapper} ${classes.service_list}`}>
                 {getProductElements()}
             </div>
         </div>

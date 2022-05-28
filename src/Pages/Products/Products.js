@@ -45,7 +45,7 @@ const Products = () => {
                 <Hero title='Our Products' />
             </div>
 
-            <div className={classes.productsWrapper}>
+            <div className={`${classes.productsWrapper} ${classes.product_list}`}>
                 {getProductElements()}
             </div>
         </div>
