@@ -55,7 +55,7 @@
     .textSection {
         margin-top: 30px;
         width: 100%;
-        font-size: 40px;
+        font-size: 2rem;
     }
 
     .testimonailsSection {
@@ -84,4 +84,12 @@
     .testimonailsSection {
         width: 50%;
     }
+
+    .textSection {
+        font-size: 2.5rem;
+    }
+
+    /* .testimonails {
+        padding-bottom: 0px;
+    } */
 }

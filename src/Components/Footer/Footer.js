@@ -7,13 +7,17 @@ import { nav } from "../../nav";
 import { Link } from "react-router-dom";
 import NewsLetterForm from '../../Components/NewsLetterForm/NewsLetterForm';
 import bgImage from '../../assets/images/bgFooter.png';
+import bgLeavesFooter from '../../assets/images/bgLeavesFooter.png';
 import commonClasses from '../../App.module.css';
-
-const styles = {
-    backgroundImage: `url(${bgImage})`
-}
+import useWindowDimensions from '../../utils/windowDimention';
 
 const Footer = () => {
+    const { width } = useWindowDimensions();
+
+    const styles = {
+      backgroundImage:
+        width <= 1024  ? `url(${bgLeavesFooter})` : `url(${bgImage})`,
+    };
 
     const generateMenu = () => {
         return nav.map(link => {

@@ -95,12 +95,9 @@ const Header = () => {
                 </Menu>
             </div>
 
-            <div className={classes.userMenu}>
+            <div className={classes.hamburgerMenu}>
                 <Button
                     id="basic-button"
-                    // aria-controls={open ? 'basic-menu' : undefined}
-                    // aria-haspopup="true"
-                    // aria-expanded={open ? 'true' : undefined}
                     onClick={() => setShowSideBar(true)}
                 >
                     <HamburgerIcon/>

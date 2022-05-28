@@ -1,10 +1,16 @@
 import React from 'react';
 
-const HomePage = React.lazy(() => import('./Pages/HomePage/HomePage'));
-const About = React.lazy(() => import('./Pages/About/About'));
-const Contact = React.lazy(() => import('./Pages/Contact/Contact'));
-const Products = React.lazy(() => import('./Pages/Products/Products'));
-const Services = React.lazy(() => import('./Pages/Service/Service'));
+// const HomePage = React.lazy(() => import('./Pages/HomePage/HomePage'));
+// const About = React.lazy(() => import('./Pages/About/About'));
+// const Contact = React.lazy(() => import('./Pages/Contact/Contact'));
+// const Products = React.lazy(() => import('./Pages/Products/Products'));
+// const Services = React.lazy(() => import('./Pages/Service/Service'));
+
+import HomePage from './Pages/HomePage/HomePage';
+import About from './Pages/About/About';
+import Contact from './Pages/Contact/Contact';
+import Products from './Pages/Products/Products';
+import Services from './Pages/Service/Service';
 
 const routes = [
     {

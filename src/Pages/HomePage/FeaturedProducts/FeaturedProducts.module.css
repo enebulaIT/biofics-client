@@ -166,4 +166,15 @@ button.viewAll:hover {
         font-size: 2rem;
         margin-bottom: 8px;
     }
+    .singleProduct {
+        border-radius: 18px;
+    }
+
+    .imageWrapper {
+        border-radius: 14px;
+    }
+
+    .textContent {
+        width: 35%;
+    }
 }

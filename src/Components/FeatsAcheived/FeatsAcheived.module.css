@@ -46,7 +46,7 @@
 
 @media only screen and (max-width: 600px) {
     .featsWrapper {
-        margin-top: 40px;
+        margin-top: 0px;
     }
     .feat { 
         width: 185px;

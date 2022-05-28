@@ -57,13 +57,16 @@
 
 @media only screen and (max-width: 600px) {
     .footer {
-        background-size: 0px;
+        /* background-size: 0px; */
         background-color: #F0FFE2;
         height: 620px;
         border-radius: 20px;
         padding-top: 0px;
         padding-left: 15px;
         padding-right: 15px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
     }
 
     .title {
@@ -103,22 +106,21 @@
     }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 900px){
+@media only screen and (min-width: 600px) and (max-width: 1024px){
     .footer {
-        background-size: 0px;
+        /* background-size: 0px; */
         background-color: #F0FFE2;
         height: 620px;
         border-radius: 20px;
         padding-left: 30px;
         padding-right: 30px;
+        padding-top: 20px;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
     }
 
     .logo img {
        margin-left: 45px;
     }
-}
-
-
-@media only screen and (min-width: 600px) and (max-width: 1024px){
-
 }

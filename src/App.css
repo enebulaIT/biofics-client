@@ -200,6 +200,10 @@ button.slick-arrow::before {
           height: 40px !important;
      }
 
+     .slick-slide img {
+          width: fit-content;
+     }
+
 }
 
 @media only screen and (max-width: 600px) {

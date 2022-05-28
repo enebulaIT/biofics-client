@@ -41,4 +41,7 @@ button.btn1:hover {
         margin: 0 30px;
     }
 
+    .pageTitle {
+        font-size: 2rem;
+    }
 }

@@ -19,3 +19,10 @@
         background-color: #FFFFFF;
     }
 }
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+
+    .clients {
+        margin-bottom: 50px;
+    }
+}

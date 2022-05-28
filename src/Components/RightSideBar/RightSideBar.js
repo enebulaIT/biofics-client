@@ -16,7 +16,7 @@ const RightSideBar = (props) => {
 //     props.hide();
 //   }
 
-  console.log('props.open', props.open)
+//   console.log('props.open', props.open)
 
   return (
     <div>
@@ -35,7 +35,7 @@ const RightSideBar = (props) => {
             {nav.map((item, index) => (
               <ListItem key={item.id} onClick={(e) => {
                   navigate(item.to);
-                //   props.hide(e);
+                  props.hide(e);
                   }}>
                   <ListItemText >{item.label}
                     {/* <Link to={item.to}>{item.label}</Link> */}

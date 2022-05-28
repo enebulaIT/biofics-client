@@ -11,12 +11,14 @@ const OurClients = (props) => {
   const [clientsData, setClientsData] = useState([]);
   const { width } = useWindowDimensions();
 
+  const slides = width <= 600 ? 1 : width > 600 && width <= 1024 ? 3 : 6;
+
   const settings = {
     dots: false,
     arrows: false,
     infinite: true,
     speed: 500,
-    slidesToShow: width <= 600 ? 1 : 6,
+    slidesToShow: slides,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
