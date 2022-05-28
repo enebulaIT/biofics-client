@@ -29,7 +29,7 @@ const Problems = (props) => {
         const elements = [];
         problemData.forEach(problem => {
             elements.push(
-                <Grid item xs={6} sm={4} md={4} key={problem.id}>
+                <Grid item xs={6} sm={6} md={6} lg={4} xl={4} key={problem.id}>
                     <div className={classes.problemItem}>
                         <div className={classes.image}>
                             <img src = {`${process.env.REACT_APP_STRAPI_BASE_URL}${problem.attributes.Image.data.attributes.url}`} alt = "problem"/>
@@ -53,11 +53,11 @@ const Problems = (props) => {
     return (
         <div className={classes.problems}>
             <div className={commonClasses.pageTitle}>
-                {width <= 600 ? 'Why Us?' : 'How are we solving the problem?'}
+                {width <= 820 ? 'Why Us?' : 'How are we solving the problem?'}
             </div>
 
             <Box className={classes.problemsContainer} sx={{ flexGrow: 1 }}>
-                <Grid container columns={12} spacing={{ xs: 2, md: 3 }} rowSpacing={width <= 600 ? 0 : 25}>
+                <Grid container columns={12} spacing={{ xs: 2, md: 3 }} rowSpacing={width <= 820 ? 0 : 25}>
                     { generateProblemItems() }
                 </Grid>
             </Box>

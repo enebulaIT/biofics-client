@@ -39,7 +39,7 @@
         width: 80px;
     }
 
-    .problemItem{
+    .problemItem {
         flex-direction: column;
     }
 
@@ -63,10 +63,62 @@
 
     .title {
         display: flex;
-        justify-content: center; 
+        justify-content: center;
     }
 
     .description {
         display: none;
     }
+
+    .text {
+        margin-left: 0px;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .text {
+        margin-left: -13px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+
+    .problemItem {
+        flex-direction: column;
+    }
+
+    .problems {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 40px;
+    }
+
+    .image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .problemsContainer {
+        margin-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .title {
+        display: flex;
+        justify-content: center;
+    }
+
+    .description {
+        display: none;
+    }
+
+    .text {
+        margin-left: 0px;
+        align-items: center;
+    }
+
+
 }

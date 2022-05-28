@@ -70,3 +70,15 @@
         margin-top: 20px;
     }
 }
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    .featsWrapper {
+        margin-top: 60px;
+    }
+    .feat {
+        margin-bottom: 15px;
+    }
+    .number {
+        font-size: 2.5em;
+    }
+}
