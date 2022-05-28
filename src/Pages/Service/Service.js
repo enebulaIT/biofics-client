@@ -2,20 +2,20 @@ import { useEffect, useState } from 'react';
 import Hero from '../../Components/Hero/Hero';
 import PageLoader from '../../Components/PageLoader/PageLoader';
 import api from '../../Api/publicApi';
-import SingleProduct from './SingleProduct/SingleProduct';
-import classes from './Products.module.css';
+import SingleService from './SingleService/SingleService';
+import classes from './Service.module.css';
 
-const Products = () => {
+const Service = () => {
 
     const [loading, setLoading] = useState(false);
-    const [productsData, setProductData] = useState([]);
+    const [serviceData, setServiceData] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const response = await api.get(`/api/products?populate=*`);
-                setProductData(response.data.data);
+                const response = await api.get(`/api/services?populate=*`);
+                setServiceData(response.data.data);
             } catch (err) {
                 console.log({ ...err });
             } finally {
@@ -28,9 +28,9 @@ const Products = () => {
     const getProductElements = () => {
         const elements = [];
 
-        productsData.forEach((product, index) => {
+        serviceData.forEach((service, index) => {
             elements.push(
-                <SingleProduct key = {product.id} productData = {product} productIndex = {index}/>
+                <SingleService key = {service.id} serviceData = {service} productIndex = {index}/>
             );
         });
 
@@ -42,7 +42,7 @@ const Products = () => {
             {loading && <PageLoader />}
 
             <div className={classes.banner}>
-                <Hero title='Our Products' />
+                <Hero title='Our Services' />
             </div>
 
             <div className={classes.productsWrapper}>
@@ -52,4 +52,4 @@ const Products = () => {
     )
 }
 
-export default Products;
+export default Service;

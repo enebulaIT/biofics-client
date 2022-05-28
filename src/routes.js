@@ -4,7 +4,7 @@ const HomePage = React.lazy(() => import('./Pages/HomePage/HomePage'));
 const About = React.lazy(() => import('./Pages/About/About'));
 const Contact = React.lazy(() => import('./Pages/Contact/Contact'));
 const Products = React.lazy(() => import('./Pages/Products/Products'));
-const Services = React.lazy(() => import('./Pages/Services/Services'));
+const Services = React.lazy(() => import('./Pages/Service/Service'));
 
 const routes = [
     {

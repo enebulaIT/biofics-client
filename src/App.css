@@ -155,10 +155,23 @@ button.slick-arrow::before {
      color: #845B1B;
 }
 
+
+/* Product Listing Page CSS */
+.slick-slider .product-thumb {
+     margin-top: 20px;
+     position: relative;
+}
+
 .product-thumb li {
      width: 90px !important;
      height: 90px !important;
 }
+
+.single-product .slick-slide {
+     display: flex !important;
+     align-items: center;
+     justify-content: center;
+ }
 
 /* Extra small devices (phones, 600px and down) */
 /* @media only screen and (max-width: 600px) {...} */

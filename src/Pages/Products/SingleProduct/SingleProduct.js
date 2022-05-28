@@ -3,9 +3,11 @@ import classes from './SingleProduct.module.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState } from "react";
+import { Button } from "@mui/material";
+import appClasses from '../../../App.module.css';
 
 const SingleProduct = (props) => {
-    const { productData } = props;
+    const { productData, productIndex } = props;
 
     const [productImages, setProductImages] = useState([]);
 
@@ -19,13 +21,13 @@ const SingleProduct = (props) => {
             );
         },
         dots: true,
+        arrows: false,
         dotsClass: "slick-dots product-thumb",
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1
     };
-
 
     useEffect(() => {
         const images = [productData?.attributes?.Thumbnail_Image?.data, ...productData?.attributes?.Gallery_Image?.data];
@@ -38,7 +40,9 @@ const SingleProduct = (props) => {
         productImages.forEach(image => {
             elements.push(
                 <div className={classes.item} key={image?.id}>
-                    <img src={`${process.env.REACT_APP_STRAPI_BASE_URL}${image?.attributes?.url}`} alt="product" />
+                    <div className={classes.imageWrapper}> 
+                        <img src={`${process.env.REACT_APP_STRAPI_BASE_URL}${image?.attributes?.url}`} alt="product" />
+                    </div>
                 </div>
             )
         })
@@ -46,8 +50,18 @@ const SingleProduct = (props) => {
         return elements
     }
 
+    const handleMoreDetails = () => {
+
+    }
+
+    const getQuote = () => {
+
+    }
+
+    const allignMentClassName = productIndex % 2 === 0 ? '' : 'inverted';
+
     return (
-        <div className={classes.product}>
+        <div className={`${classes.product} ${'single-product'} ${classes[allignMentClassName]}`}>
             <div className={classes.imagesContainer}>
                 <Slider {...settings}>
                     {getImageElements()}
@@ -55,8 +69,23 @@ const SingleProduct = (props) => {
             </div>
 
 
-            <div className={classes.textContainer}>
+            <div className={classes.productInfo}>
+                <div className={classes.descriptionWrapper}>
+                    <div className={classes.text}>
+                        <div className={classes.title}>
+                            {productData?.attributes?.Title}
+                        </div>
 
+                        <div className={classes.description}>
+                            {productData?.attributes?.Excerpt}
+                        </div>
+                    </div>
+
+                    <div className={classes.buttons}>
+                        <Button className={appClasses.btn1} disableRipple onClick={handleMoreDetails}>More Details</Button>
+                        <Button className={appClasses.btn1} disableRipple onClick={getQuote}>Get Quote</Button>
+                    </div>
+                </div>
             </div>
         </div>
     )
