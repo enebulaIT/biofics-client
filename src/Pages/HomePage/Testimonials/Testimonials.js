@@ -9,13 +9,14 @@ import useWindowDimensions from '../../../utils/windowDimention';
 const Testimonials = (props) => {
   const [testimonailsData, setTestimonialsData] = useState([]);
   const { width } = useWindowDimensions();
+  const slidesToShow = width <= 1024 ? 1 : 2
 
   const settings = {
     dots: false,
     arrows: width <= 600 ? false : true,
     infinite: true,
     speed: 500,
-    slidesToShow: width <= 600 ? 1 : 2,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
   };
 

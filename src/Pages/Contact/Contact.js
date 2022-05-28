@@ -14,6 +14,7 @@ import {
   MailIconBrown,
 } from '../../assets/icons';
 import { EMAIL, PHONE, SOCIAL_URLS } from '../../constants';
+import useWindowDimensions from '../../utils/windowDimention';
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -28,6 +29,7 @@ const Contact = () => {
   const [careerSelectPosition, setCareerSelectPosition] = useState('');
   const [file, setFile] = useState('');
   const inputFile = useRef(null);
+  const { width } = useWindowDimensions();
 
   const handleFileUpload = async (event) => {
     const file = event.target.files[0];
@@ -90,7 +92,7 @@ const Contact = () => {
           <div className={classes.questionnaireDetail}>
             <h6 className={classes.title}>{'Got a Question?'}</h6>
             <Box>
-              <Grid container columns={12} spacing={2}>
+              <Grid container columns={12} spacing={width <= 600 ? 2 : 8}>
                 <Grid item xs={6}>
                   <TextField
                     value={firstName}
@@ -170,7 +172,7 @@ const Contact = () => {
         <h6 className={classes.title}>{'Careers'}</h6>
         <div className={classes.careerForm}>
           <Box sx={{ flexGrow: 1 }}>
-            <Grid container columns={12} spacing={24}>
+            <Grid container columns={12} spacing={width <= 600 ? 2 : width > 900 ? 20 : 8}>
               <Grid item xs={6}>
                 <TextField
                   value={careerFirstName}

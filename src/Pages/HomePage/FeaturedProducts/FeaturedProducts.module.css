@@ -157,3 +157,9 @@ button.viewAll:hover {
     }
 
 }
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    .products {
+        margin-top: 60px;
+    }
+}
