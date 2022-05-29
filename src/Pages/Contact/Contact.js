@@ -222,6 +222,8 @@ const Contact = () => {
 
           <div className={classes.attachment}>
             <div className={classes.attchText}>Attach Resume</div>
+
+            <div className={classes.browse}>
             <div
               className={classes.browseFile}
               onClick={() => onBrowserFileClick()}
@@ -229,6 +231,7 @@ const Contact = () => {
               Browse File
             </div>
             <div className={classes.docOrPdf}>Doc or Pdf*</div>
+            </div>
 
             <input
               id='fileInput'
@@ -239,6 +242,10 @@ const Contact = () => {
               accept='application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document'
             />
           </div>
+
+          <Button className={classes.submit} disableRipple onClick={() => {}}>
+           Submit
+         </Button>
         </div>
       </div>
     </div>
