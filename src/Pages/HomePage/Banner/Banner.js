@@ -61,7 +61,7 @@ const Banner = (props) => {
                             backgroundImage: `url(${bgLeavesImage})`,
                         }}>
                             <div className={classes.imageWraper}>
-                                <img src = {`${process.env.REACT_APP_STRAPI_BASE_URL}${banner.attributes.BannerImage.data.attributes.url}`}  alt = "banner"/>
+                                <img src = {`${banner.attributes.BannerImage.data.attributes.url}`}  alt = "banner"/>
                             </div>
                         </div>
                     </div>
