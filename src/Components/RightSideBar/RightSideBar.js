@@ -1,22 +1,16 @@
-import { Button, Menu, MenuItem, Drawer, Box, List, ListItem, ListItemText, ListItemIcon, ListItemButton } from '@mui/material';
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { UserIcon, HamburgerIcon } from '../../assets/icons';
+import { Drawer, Box, List, ListItem, ListItemText } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import { nav } from '../../nav';
 import classes from './RightSideBar.module.css';
+import Logo from '../../assets/images/Logo.png';
 
 const RightSideBar = (props) => {
   const navigate = useNavigate();
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
 
-
-//   const onClickItem = (item) => {
-//     navigate(item.to);
-//     props.hide();
-//   }
-
-//   console.log('props.open', props.open)
+  const onClickItem = (e, item) => {
+      navigate(item.to);
+      props.hide(e);
+  }
 
   return (
     <div>
@@ -26,23 +20,28 @@ const RightSideBar = (props) => {
         onClose={props.hide}
       >
         <Box
-          sx={{ width: 220 }}
+          sx={{ width: 230, display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100%', marginLeft: '8px' }}
           role='presentation'
-        //   onClick={props.hide}
-        //   onKeyDown={props.hide}
+          // onClick={props.hide}
+          onKeyDown={props.hide}
         >
-          <List>
+          <div className={classes.logo}>
+            <a href="/">
+                <img src={Logo} alt="logo" />
+            </a>
+          </div>
+          <List className={classes.list}>
             {nav.map((item, index) => (
-              <ListItem key={item.id} onClick={(e) => {
-                  navigate(item.to);
-                  props.hide(e);
-                  }}>
-                  <ListItemText >{item.label}
-                    {/* <Link to={item.to}>{item.label}</Link> */}
+              <ListItem className={classes.item} key={item.id} onClick={(e) => {onClickItem(e, item)}}>
+                  <ListItemText className={classes.itemText}>{item.label}
                   </ListItemText>
               </ListItem>
             ))}
           </List>
+
+          <div className={classes.bottomBar}>
+            @2022 BIOFICS
+        </div>
         </Box>
       </Drawer>
     </div>
