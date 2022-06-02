@@ -21,8 +21,7 @@ const SignIn = () => {
       toast.error('Please enter email');
     } else if (!emailRegex.test(email)) {
       toast.error('Please enter valid email');
-    }
-    if (!password) {
+    } else if (!password) {
       toast.error('Please enter create password');
     } else if (password.length < 8) {
       toast.error('Password length must be atleast 8 characters');
@@ -32,6 +31,7 @@ const SignIn = () => {
   };
 
   const LoginUser = async () => {
+    let errMsg = '';
     setLoading(true);
     try {
       const data = {
@@ -40,14 +40,13 @@ const SignIn = () => {
       };
       const response = await api.post(`/api/auth/local?populate=*`, data);
       if (response.status === 200) {
+        await localStorage.setItem('jwt', response?.data?.jwt);
         await toast.success('User logged in successfully');
         await navigate('/');
-      } else {
-        await toast.error(response.error.message);
       }
     } catch (err) {
-      toast.error(err.message);
-      console.log({ ...err });
+      errMsg = err?.response?.data?.error?.message || 'Something went wrong';
+      toast.error(errMsg);
     } finally {
       setLoading(false);
     }
@@ -75,7 +74,7 @@ const SignIn = () => {
           <TextField
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            type='text'
+            type='password'
             label='Password'
             className={classes.input}
             fullWidth
@@ -99,7 +98,7 @@ const SignIn = () => {
           )}
         </Button>
       </div>
-      <p className={classes.newUserText}>New User? Sign Up here!</p>
+      <p className={classes.newUserText} onClick={() => navigate('/signup')}>New User? Sign Up here!</p>
     </div>
   );
 };

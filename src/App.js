@@ -39,8 +39,8 @@ function App() {
               {getRoutes()}
             </Route>
             <Route path='/' element={<AuthLayout />}>
-              <Route path='/signup' exact element={<SignUp />} />
               <Route path='/signin' exact element={<SignIn />} />
+              <Route path='/signup' exact element={<SignUp />} />
             </Route>
             <Route path='*' element={<NotFound />} />
           </Routes>

@@ -11,7 +11,7 @@ const OurTeam = (props) => {
       props.setLoading(true);
       try {
         const response = await api.get(`/api/teams?populate=*`);
-        setTeamsData(response.data.data);
+        setTeamsData(response?.data?.data);
       } catch (err) {
         console.log({ ...err });
       } finally {
