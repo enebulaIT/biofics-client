@@ -8,18 +8,30 @@ import { Suspense } from 'react';
 import Loading from './Pages/Loading/Loading';
 import SignUp from './Pages/SignUp/SignUp';
 import SignIn from './Pages/SignIn/SignIn';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-
   const getRoutes = () => {
-    return routes.map(route => {
+    return routes.map((route) => {
       const Component = route.component;
-      return <Route path = {route.path} exact element = {<Component/>}/>
-    })
-  }
+      return <Route path={route.path} exact element={<Component />} />;
+    });
+  };
 
   return (
     <div className='App'>
+      <ToastContainer
+        position='top-right'
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Suspense fallback={<Loading />}>
         <BrowserRouter>
           <Routes>
