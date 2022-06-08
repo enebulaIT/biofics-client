@@ -42,7 +42,7 @@ const Products = () => {
             {loading && <PageLoader />}
 
             <div className={classes.banner}>
-                <Hero title='Our Products' />
+                <Hero bannerId = {3} />
             </div>
 
             <div className={`${classes.productsWrapper} ${classes.product_list}`}>

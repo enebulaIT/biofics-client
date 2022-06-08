@@ -44,7 +44,7 @@ const Contact = () => {
     <div className={classes.container}>
       {loading && <PageLoader />}
       <div className={classes.contactPage}>
-        <Hero title='Contact Us' />
+        <Hero bannerId = {2} />
       </div>
       <div className={classes.contactUsForm}>
         <div className={classes.getInTouch}>

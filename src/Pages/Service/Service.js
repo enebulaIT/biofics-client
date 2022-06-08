@@ -42,7 +42,7 @@ const Service = () => {
             {loading && <PageLoader />}
 
             <div className={classes.banner}>
-                <Hero title='Our Services' />
+                <Hero bannerId = {4} />
             </div>
 
             <div className={`${classes.productsWrapper} ${classes.service_list}`}>

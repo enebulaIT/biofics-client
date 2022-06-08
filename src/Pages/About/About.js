@@ -31,7 +31,7 @@ const About = () => {
             { loading && <PageLoader/> }
 
             <div className={classes.aboutPage}>
-                <Hero title= "About Biofics" />
+                <Hero bannerId = {1}/>
 
                 <h6 className={classes.title}>{'Who we are?'}</h6>
                 

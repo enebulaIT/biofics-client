@@ -61,7 +61,7 @@ const Banner = (props) => {
                             backgroundImage: `url(${bgLeavesImage})`,
                         }}>
                             <div className={classes.imageWraper}>
-                                <img src = {`${banner.attributes.BannerImage.data.attributes.url}`}  alt = "banner"/>
+                                <img src = {`${banner?.attributes?.BannerImage?.data?.attributes?.url}`}  alt = "banner"/>
                             </div>
                         </div>
                     </div>
