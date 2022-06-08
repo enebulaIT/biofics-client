@@ -35,7 +35,7 @@ const OurTeam = (props) => {
                 <div className={classes.teams}>
                   <div className={classes.team_img}>
                     <img
-                      src={`${process.env.REACT_APP_STRAPI_BASE_URL}${item?.attributes?.Image?.data?.attributes?.formats?.thumbnail?.url}`}
+                      src={`${item?.attributes?.Image?.data?.attributes?.formats?.thumbnail?.url}`}
                       alt='team'
                     />
                   </div>

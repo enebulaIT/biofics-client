@@ -41,7 +41,7 @@ const About = () => {
                     </div>
 
                     <div className={classes.image}>
-                        <img src={`${process.env.REACT_APP_STRAPI_BASE_URL}${aboutPageContent?.attributes?.WhoWeAre?.Image}`} alt="WhoWeAre" />
+                        <img src={`${aboutPageContent?.attributes?.WhoWeAre?.Image}`} alt="WhoWeAre" />
                     </div>
                 </div>
 

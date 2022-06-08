@@ -21,7 +21,7 @@ const SingleService = (props) => {
             <div className={` ${classes.imagesContainer}  ${classes[marginClassName]}`}>
                 <div className={classes.item}>
                     <div className={classes.imageWrapper}>
-                        <img src={`${process.env.REACT_APP_STRAPI_BASE_URL}${serviceData.attributes.Thumbnail.data.attributes.url}`} alt="Service" />
+                        <img src={`${serviceData.attributes.Thumbnail.data.attributes.url}`} alt="Service" />
                     </div>
                 </div>
             </div>

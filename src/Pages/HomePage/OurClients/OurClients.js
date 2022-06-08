@@ -45,7 +45,7 @@ const OurClients = (props) => {
       elements.push(
         <div className={classes.item} key={client.id}>
           <img
-            src={`${process.env.REACT_APP_STRAPI_BASE_URL}${client.attributes.Logo.data.attributes.url}`}
+            src={`${client.attributes.Logo.data.attributes.url}`}
             alt='client'
           />
         </div>

@@ -16,7 +16,7 @@ const SingleProduct = (props) => {
             const imgSrc = productImages[i]?.attributes?.url;
             return (
                 <a className={classes.smallImage}>
-                    <img src={`${process.env.REACT_APP_STRAPI_BASE_URL}${imgSrc}`} alt="product" />
+                    <img src={`${imgSrc}`} alt="product" />
                 </a>
             );
         },
@@ -41,7 +41,7 @@ const SingleProduct = (props) => {
             elements.push(
                 <div className={classes.item} key={image?.id}>
                     <div className={classes.imageWrapper}> 
-                        <img src={`${process.env.REACT_APP_STRAPI_BASE_URL}${image?.attributes?.url}`} alt="product" />
+                        <img src={`${image?.attributes?.url}`} alt="product" />
                     </div>
                 </div>
             )

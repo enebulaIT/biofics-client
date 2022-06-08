@@ -48,7 +48,7 @@ const FeaturedProducts = (props) => {
 
                         <div className={classes.imageContent}>
                             <div className={classes.imageWrapper}>
-                                <img alt="product" src={`${process.env.REACT_APP_STRAPI_BASE_URL}${product.attributes.Thumbnail_Image.data.attributes.url}`} />
+                                <img alt="product" src={`${product.attributes.Thumbnail_Image.data.attributes.url}`} />
                             </div>
                         </div>
                     </div >

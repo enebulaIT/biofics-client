@@ -42,7 +42,7 @@ const Testimonials = (props) => {
         <div key={testimonial.id} className={classes.testimonial}>
           <div className={classes.image}>
             <img
-              src={`${process.env.REACT_APP_STRAPI_BASE_URL}${testimonial.attributes.Image.data.attributes.url}`}
+              src={`${testimonial.attributes.Image.data.attributes.url}`}
               alt='testimonial'
             />
           </div>

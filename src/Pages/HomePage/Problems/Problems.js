@@ -32,7 +32,7 @@ const Problems = (props) => {
                 <Grid item xs={6} sm={6} md={6} lg={4} xl={4} key={problem.id}>
                     <div className={classes.problemItem}>
                         <div className={classes.image}>
-                            <img src = {`${process.env.REACT_APP_STRAPI_BASE_URL}${problem.attributes.Image.data.attributes.url}`} alt = "problem"/>
+                            <img src = {`${problem.attributes.Image.data.attributes.url}`} alt = "problem"/>
                         </div>
 
                         <div className={classes.text}>
