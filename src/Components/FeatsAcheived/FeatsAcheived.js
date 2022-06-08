@@ -13,7 +13,7 @@ const FeatsAcheived = (props) => {
             props.setLoading(true);
             try {
                 const response = await api.get(`/api/feats`);
-                setFeatsData(response.data.data);
+                setFeatsData(response?.data?.data);
             } catch (err) {
                 console.log({ ...err });
             } finally {
