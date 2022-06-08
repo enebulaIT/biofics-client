@@ -39,7 +39,7 @@ const Header = () => {
         // <MenuItem onClick={handleClose}>My account</MenuItem>
         // <MenuItem onClick={handleClose}>Logout</MenuItem>
 
-        menuList.push(<MenuItem onClick={() => handleUserMenuNavigate('/login')}>Login</MenuItem>);
+        menuList.push(<MenuItem onClick={() => handleUserMenuNavigate('/signin')}>Login</MenuItem>);
         return menuList;
     }
 
