@@ -30,7 +30,7 @@ const SingleProduct = (props) => {
     };
 
     useEffect(() => {
-        const images = [productData?.attributes?.Thumbnail_Image?.data, ...productData?.attributes?.Gallery_Image?.data];
+        const images = [productData?.attributes?.Thumbnail_Image?.data ?? [], ...productData?.attributes?.Gallery_Image?.data ?? []];
         setProductImages(images)
     }, []);
 
