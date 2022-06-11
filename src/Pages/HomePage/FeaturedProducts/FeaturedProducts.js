@@ -41,7 +41,7 @@ const FeaturedProducts = (props) => {
                                 {product.attributes.Title}
                             </div>
                             <div className={classes.description}>
-                                {product.attributes.Description}
+                                {product.attributes.Excerpt}
                             </div>
                             <Button className={classes.action} disableRipple onClick={handleEnquire}>Enquire Now!</Button>
                         </div>
