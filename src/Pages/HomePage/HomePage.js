@@ -9,6 +9,7 @@ import Services from './Services/Services';
 import OurClients from './OurClients/OurClients';
 import Testimonials from './Testimonials/Testimonials';
 import FeatsAcheived from '../../Components/FeatsAcheived/FeatsAcheived';
+import MapSection from './MapSection/MapSection';
 
 const HomePage = () => {
 
@@ -20,6 +21,7 @@ const HomePage = () => {
 
             <section className={`${classes.banner} ${commonClasses.container}`}>
                 <Banner setLoading = {setLoading}/>
+                <MapSection setLoading = {setLoading}/>
             </section>
 
             <section className={classes.problems}>

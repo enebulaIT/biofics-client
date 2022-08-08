@@ -14,6 +14,10 @@ import PhoneIconBrown from './phoneIcon_brown';
 import TwitterIconBrown from './twitterIcon_brown';
 import HamburgerIcon from './hamburgerIcon';
 import LockLightIcon from './lockLightIcon';
+import DoneIcon from './done';
+import CityIcon from './city';
+import RecycleIcon from './recycle';
+import TestIcon from './test';
 
 export {
     LinkedinIcon,
@@ -31,5 +35,9 @@ export {
     PhoneIconBrown,
     TwitterIconBrown,
     HamburgerIcon,
-    LockLightIcon
+    LockLightIcon,
+    DoneIcon,
+    CityIcon,
+    RecycleIcon,
+    TestIcon
 }
