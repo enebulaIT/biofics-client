@@ -13,30 +13,30 @@ import MapSection from './MapSection/MapSection';
 
 const HomePage = () => {
 
-    const [ loading, setLoading ] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     return (
         <div className={`${classes.home}`}>
-            { loading && <PageLoader/> }
+            {loading && <PageLoader />}
 
+            <Banner setLoading={setLoading} />
             <section className={`${classes.banner} ${commonClasses.container}`}>
-                <Banner setLoading = {setLoading}/>
-                <MapSection setLoading = {setLoading}/>
+                <MapSection setLoading={setLoading} />
             </section>
 
             <section className={classes.problems}>
-                <Problems setLoading = {setLoading}/>
+                <Problems setLoading={setLoading} />
             </section>
-            
+
             <section className={`${classes.generalSection} ${commonClasses.container}`}>
-                <FeatsAcheived setLoading = {setLoading}/>
-                <FeaturedProducts setLoading = {setLoading}/>
+                <FeatsAcheived setLoading={setLoading} />
+                <FeaturedProducts setLoading={setLoading} />
                 <Services />
             </section>
 
-            <section className={ `${classes.clients}` }>
-                <OurClients setLoading = {setLoading}/>
-                <Testimonials setLoading = {setLoading}/>
+            <section className={`${classes.clients}`}>
+                <OurClients setLoading={setLoading} />
+                <Testimonials setLoading={setLoading} />
             </section>
         </div>
     )

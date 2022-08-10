@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 import api from '../../../Api/publicApi';
 import Slider from "react-slick";
-import bgLeavesImage from '../../../assets/images/bgLeaves.png';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import classes from './Banner.module.css';
-import BgImage from '../../../assets/images/bgBanner.png';
 
 const settings = {
     dots: false,
@@ -14,13 +12,10 @@ const settings = {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000
+    // autoplay: true,
+    // autoplaySpeed: 2000
 };
 
-const bannerStyles = {
-    backgroundImage: `url(${BgImage})`
-}
 
 const Banner = (props) => {
 
@@ -46,22 +41,44 @@ const Banner = (props) => {
 
         bannerData.forEach(banner => {
             elements.push(
-                <div className={classes.item} key = {banner.id}>
-                    <div className={classes.itemWrapper}>
-                        <div className={classes.text}>
-                            <div className={classes.title}>
-                                {banner.attributes.Title}
-                            </div>
-                            <div className={classes.description}>
-                                {banner.attributes.Description}
-                            </div>
-                        </div>
+                // <div className={classes.item} key = {banner.id}>
+                //     <div className={classes.itemWrapper}>
+                //         <div className={classes.text}>
+                //             <div className={classes.title}>
+                //                 {banner.attributes.Title}
+                //             </div>
+                //             <div className={classes.description}>
+                //                 {banner.attributes.Description}
+                //             </div>
+                //         </div>
 
-                        <div className={classes.image} style = {{
-                            backgroundImage: `url(${bgLeavesImage})`,
-                        }}>
-                            <div className={classes.imageWraper}>
-                                <img src = {`${banner?.attributes?.BannerImage?.data?.attributes?.url}`}  alt = "banner"/>
+                //         <div className={classes.image} style = {{
+                //             backgroundImage: `url(${bgLeavesImage})`,
+                //         }}>
+                //             <div className={classes.imageWraper}>
+                //                 <img src = {`${banner?.attributes?.BannerImage?.data?.attributes?.url}`}  alt = "banner"/>
+                //             </div>
+                //         </div>
+                //     </div>
+                // </div>
+
+                <div className={classes.item} key={banner.id}>
+                    <div className={classes.bannerImg} style={{ backgroundImage: `url(${banner?.attributes?.BackgroundImage?.data?.attributes?.url})` }}>
+
+                        <div className={`${classes.itemWrapper} ${classes[banner.attributes.ProductImagePlacement]}`}>
+                            <div className={classes.text}>
+                                <div className={classes.title}>
+                                    {banner.attributes.Title}
+                                </div>
+                                <div className={classes.description}>
+                                    {banner.attributes.Description}
+                                </div>
+                            </div>
+
+                            <div className={classes.image} >
+                                <div className={classes.imageWraper}>
+                                    <img src={`${banner?.attributes?.BannerImage?.data?.attributes?.url}`} alt="banner" />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -71,12 +88,12 @@ const Banner = (props) => {
         return elements;
     }
 
-    if(bannerData.length === 0) return null;
+    if (bannerData.length === 0) return null;
 
     return (
-        <div className={classes.banner} style = {bannerStyles}>
+        <div>
             <Slider {...settings}>
-                { generateBannerItems() }
+                {generateBannerItems()}
             </Slider>
         </div>
     )

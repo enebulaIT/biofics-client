@@ -8,6 +8,13 @@
     height: 40vw;
 }
 
+.bannerImg {
+    height: 1000px;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+}
+
 .itemWrapper {
     display: flex;
     justify-content: space-between;
@@ -15,41 +22,36 @@
     margin-left: 90px;
     margin-right: 55px;
     align-items: center;
+    height: 100%;
 }
 
-.image {
-    background-color: #7BB259;
-    width: 30vw;
-    height: 30vw;
-    border-radius: 50%;
-    position: relative;
+.itemWrapper.Left{
+    flex-direction: row-reverse;
 }
 
 .imageWraper img  {
-    height: 18vw;
+    height: 35vw;
     width: 18vw;  
 }
 
-.imageWraper {
-    position: absolute;
-    top: 25%;
-    left: 25%;
-}
-
 .text {
-    width: 40%;
+    width: 60%;
 }
 
 .title {
     font-size: 3em;
     font-weight: 800;
     margin-bottom: 25px;
-    color: #845B1B;
+    color: #fff;
+
+    text-align: center;
 }
 
 .description {
-    color: #72786C;
+    color: #fff;
     font-weight: 400;
+
+    text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
