@@ -194,6 +194,10 @@ button.slick-arrow::before {
      width: 100%;
 }
 
+.clients-page .slick-slide img {
+     max-width: 200px;
+}
+
 @media only screen and (min-width: 600px) and (max-width: 1024px) {
      .product-thumb li {
           width: 40px !important;

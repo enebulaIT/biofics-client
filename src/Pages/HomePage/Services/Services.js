@@ -9,7 +9,7 @@ const Services = () => {
     return (
         <div className={classes.services}>
             <div className={commonClasses.pageTitle}>
-                Services
+                Strength
             </div>
 
             <div className={classes.servicesWrapper}>

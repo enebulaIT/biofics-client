@@ -42,6 +42,7 @@ const Testimonials = (props) => {
         <div key={testimonial.id} className={classes.testimonial}>
           <div className={classes.image}>
             <img
+              className={classes.clientimg}
               src={`${testimonial.attributes.Image.data.attributes.url}`}
               alt='testimonial'
             />

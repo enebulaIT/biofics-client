@@ -24,11 +24,6 @@
     margin: 0 auto;
 }
 
-.image {
-    max-width: 310px;
-    max-height: 199px;
-}
-
 .info {
     margin-top: 23px;
 }
@@ -43,6 +38,12 @@
     margin-top: 23px;
     max-width: 310px;
     color: #72786C;
+}
+
+.clientimg {
+    height: 300px;
+    max-width: 300px;
+    border-radius: 25px;
 }
 
 @media only screen and (max-width: 600px) {

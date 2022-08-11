@@ -3,13 +3,14 @@ import Banner from './Banner/Banner';
 import classes from './HomePage.module.css';
 import commonClasses from '../../App.module.css';
 import PageLoader from '../../Components/PageLoader/PageLoader';
-import Problems from './Problems/Problems';
+// import Problems from './Problems/Problems';
 import FeaturedProducts from './FeaturedProducts/FeaturedProducts';
 import Services from './Services/Services';
 import OurClients from './OurClients/OurClients';
 import Testimonials from './Testimonials/Testimonials';
 import FeatsAcheived from '../../Components/FeatsAcheived/FeatsAcheived';
 import MapSection from './MapSection/MapSection';
+import VideoPlayer from './VideoPlayer/VideoPlayer';
 
 const HomePage = () => {
 
@@ -24,9 +25,9 @@ const HomePage = () => {
                 <MapSection setLoading={setLoading} />
             </section>
 
-            <section className={classes.problems}>
+            {/* <section className={classes.problems}>
                 <Problems setLoading={setLoading} />
-            </section>
+            </section> */}
 
             <section className={`${classes.generalSection} ${commonClasses.container}`}>
                 <FeatsAcheived setLoading={setLoading} />
@@ -37,6 +38,11 @@ const HomePage = () => {
             <section className={`${classes.clients}`}>
                 <OurClients setLoading={setLoading} />
                 <Testimonials setLoading={setLoading} />
+            </section>
+
+
+            <section className={`${classes.videoplayer} ${commonClasses.container}`}>
+                <VideoPlayer/>
             </section>
         </div>
     )

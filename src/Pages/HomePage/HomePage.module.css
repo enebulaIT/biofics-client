@@ -8,6 +8,10 @@
     margin-bottom: 100px;
 }
 
+.videoplayer {
+    margin-bottom: 100px !important;
+}
+
 @media only screen and (max-width: 600px) {
     .clients {
         background-color: #FFFFFF;

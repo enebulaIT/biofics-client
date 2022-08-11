@@ -61,7 +61,7 @@ const OurClients = (props) => {
     <div className={classes.clients}>
       <div className={commonClasses.pageTitle}>Our Clients</div>
 
-      <div className={classes.clientWrapper}>
+      <div className={`${classes.clientWrapper} clients-page`}>
         <Slider {...settings}>{generateClientsItems()}</Slider>
       </div>
     </div>
