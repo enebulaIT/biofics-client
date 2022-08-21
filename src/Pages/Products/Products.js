@@ -1,21 +1,39 @@
 import { useEffect, useState } from 'react';
-import Hero from '../../Components/Hero/Hero';
+import Hero2 from '../../Components/Hero/Hero2';
 import PageLoader from '../../Components/PageLoader/PageLoader';
 import api from '../../Api/publicApi';
 import SingleProduct from './SingleProduct/SingleProduct';
 import classes from './Products.module.css';
+import { useParams } from 'react-router-dom';
 
 const Products = () => {
+    const { id } = useParams();
 
     const [loading, setLoading] = useState(false);
     const [productsData, setProductData] = useState([]);
+    const [subCatData, setSubCatData] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const response = await api.get(`/api/products?populate=*`);
+                const response = await api.get(`/api/product-categories/${id}?populate=*`);
                 setProductData(response.data.data);
+            } catch (err) {
+                console.log({ ...err });
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            setLoading(true);
+            try {
+                const response = await api.get(`/api/product-sub-categories?populate=*`);
+                setSubCatData(response.data.data);
             } catch (err) {
                 console.log({ ...err });
             } finally {
@@ -27,28 +45,45 @@ const Products = () => {
 
     const getProductElements = () => {
         const elements = [];
+        const subCatDataShortData = productsData?.attributes?.product_sub_categories?.data;
+        const subCatIds = [];
+        if(subCatDataShortData && subCatDataShortData?.length !== 0) {
+            subCatDataShortData.forEach(data => subCatIds.push(data?.id))
+        }
+        console.log('subCatIds', subCatIds)
 
-        productsData.forEach((product, index) => {
-            elements.push(
-                <SingleProduct key = {product.id} productData = {product} productIndex = {index}/>
-            );
+        subCatData.forEach((product, index) => {
+            if(subCatIds.includes(product?.id)) {
+                elements.push(
+                    <SingleProduct key={product.id} productData={product} productIndex={index} />
+                );
+                console.log('product', product)
+            }
         });
 
         return elements;
     }
 
+    console.log('productsData', productsData)
+
     return (
-        <div className={classes.container}>
-            {loading && <PageLoader />}
-
+        <>
             <div className={classes.banner}>
-                <Hero bannerId = {3} />
+                <Hero2 bannerData={{
+                    Title: productsData?.attributes?.CategoryName,
+                    image: productsData?.attributes?.BannerImage?.data?.attributes?.url
+                }} />
             </div>
+            
+            <div className={classes.container}>
+                {loading && <PageLoader />}
 
-            <div className={`${classes.productsWrapper} ${classes.product_list}`}>
-                {getProductElements()}
+
+                <div className={`${classes.productsWrapper} ${classes.product_list}`}>
+                    {getProductElements()}
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

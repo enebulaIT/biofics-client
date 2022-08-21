@@ -72,7 +72,7 @@ const Header = () => {
             </div>
 
             <div className={classes.multipleMenu}>
-            <div className={classes.userMenu}>
+            {/* <div className={classes.userMenu}>
                 <Button
                     id="basic-button"
                     aria-controls={open ? 'basic-menu' : undefined}
@@ -93,7 +93,7 @@ const Header = () => {
                 >
                     {generateUserMenu()}
                 </Menu>
-            </div>
+            </div> */}
 
             <div className={classes.hamburgerMenu}>
                 <Button

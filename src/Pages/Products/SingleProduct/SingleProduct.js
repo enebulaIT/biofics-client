@@ -77,8 +77,7 @@ const SingleProduct = (props) => {
                             {productData?.attributes?.Title}
                         </div>
 
-                        <div className={classes.description}>
-                            {productData?.attributes?.Excerpt}
+                        <div className={classes.description} dangerouslySetInnerHTML={{__html: productData?.attributes?.Excerpt}}>
                         </div>
                     </div>
 

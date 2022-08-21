@@ -12,10 +12,11 @@
     width: fit-content;
     margin: 0 auto;
     transition: all 0.2s ease-out;
+    transform: scale(0.65);
 }
 
 .item img:hover {
-    transform: scale(1.5);
+    transform: scale(1);
 }
 
 @media only screen and (max-width: 600px) {

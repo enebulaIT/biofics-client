@@ -188,6 +188,10 @@ button.slick-arrow::before {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 /* @media only screen and (min-width: 1200px) {...} */
 
+*:focus {
+     outline: 0;
+     outline: none;
+   }
 
 /* Added By ASHIT START */
 .slick-slide img {
@@ -195,7 +199,7 @@ button.slick-arrow::before {
 }
 
 .clients-page .slick-slide img {
-     max-width: 200px;
+     max-width: 300px;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1024px) {

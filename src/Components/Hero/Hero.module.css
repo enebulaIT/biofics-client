@@ -40,6 +40,33 @@
     width: 45%;
 }
 
+/* Hero2 */
+.hero2banner {
+    height: 500px;
+}
+
+.hero2banner .bannerImg {
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+}
+
+.hero2banner .title {
+    font-size: 4em;
+    font-weight: 900;
+    color: #FFF3D7;
+    width: fit-content;
+    margin: 0 auto;
+
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Hero2 */
+
 
 @media only screen and (max-width: 600px) {
     .hero {
