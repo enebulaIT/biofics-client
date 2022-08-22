@@ -3,11 +3,12 @@ import Hero2 from '../../Components/Hero/Hero2';
 import PageLoader from '../../Components/PageLoader/PageLoader';
 import api from '../../Api/publicApi';
 import SingleProduct from './SingleProduct/SingleProduct';
-import classes from './Products.module.css';
+import classes from './ProductDetail.module.css';
 import { useParams } from 'react-router-dom';
+import defaultInnerBannerImg from '../../assets/images/defaultInnerBanner.jpg';
 
 
-const Products = () => {
+const ProductDetail = () => {
     const { id } = useParams();
       
 
@@ -19,7 +20,7 @@ const Products = () => {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const response = await api.get(`/api/product-categories/${id}?populate=*`);
+                const response = await api.get(`/api/products?populate=*`);
                 setProductData(response.data.data);
             } catch (err) {
                 console.log({ ...err });
@@ -34,7 +35,7 @@ const Products = () => {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const response = await api.get(`/api/product-sub-categories?populate=*`);
+                const response = await api.get(`/api/product-sub-categories/${id}?populate=*`);
                 setSubCatData(response.data.data);
             } catch (err) {
                 console.log({ ...err });
@@ -47,15 +48,14 @@ const Products = () => {
 
     const getProductElements = () => {
         const elements = [];
-        const subCatDataShortData = productsData?.attributes?.product_sub_categories?.data;
-        const subCatIds = [];
+        const subCatDataShortData = subCatData?.attributes?.products?.data;
+        const productIds = [];
         if(subCatDataShortData && subCatDataShortData?.length !== 0) {
-            subCatDataShortData.forEach(data => subCatIds.push(data?.id))
+            subCatDataShortData.forEach(data => productIds.push(data?.id))
         }
-        console.log('subCatIds', subCatIds)
 
-        subCatData.forEach((product, index) => {
-            if(subCatIds.includes(product?.id)) {
+        productsData.forEach((product, index) => {
+            if(productIds.includes(product?.id)) {
                 elements.push(
                     <SingleProduct key={product.id} productData={product} productIndex={index} />
                 );
@@ -70,8 +70,8 @@ const Products = () => {
         <>
             <div className={classes.banner}>
                 <Hero2 bannerData={{
-                    Title: productsData?.attributes?.CategoryName,
-                    image: productsData?.attributes?.BannerImage?.data?.attributes?.url
+                    Title: subCatData?.attributes?.Title,
+                    image: defaultInnerBannerImg
                 }} />
             </div>
             
@@ -87,4 +87,4 @@ const Products = () => {
     )
 }
 
-export default Products;
+export default ProductDetail;

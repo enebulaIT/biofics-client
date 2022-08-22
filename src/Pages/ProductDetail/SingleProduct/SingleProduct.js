@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 import { useNavigate  } from 'react-router-dom';
-
+import MoreDetailsModal from '../MoreDetailsModal/MoreDetailsModal';
 import appClasses from '../../../App.module.css';
 
 const SingleProduct = (props) => {
@@ -13,6 +13,10 @@ const SingleProduct = (props) => {
     const navigate = useNavigate();
 
     const [productImages, setProductImages] = useState([]);
+
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
     const settings = {
         customPaging: function (i) {
@@ -81,10 +85,16 @@ const SingleProduct = (props) => {
                     </div>
 
                     <div className={classes.buttons}>
-                        <Button className={appClasses.btn1} disableRipple onClick={() => handleMoreDetails(productData?.id)}>More Details</Button>
+                        <Button className={appClasses.btn1} disableRipple onClick={handleOpen}>More Details</Button>
+                        <Button className={appClasses.btn1} disableRipple onClick={() => handleMoreDetails(productData?.id)}>Get Quote</Button>
                     </div>
                 </div>
             </div>
+            <MoreDetailsModal handleClose = {handleClose} open = {open} modalData = {{
+                tite: productData?.attributes?.Title,
+                modalBody: productData?.attributes?.Description,
+                modalFooter: <Button className={appClasses.btn1} disableRipple onClick={() => handleMoreDetails(productData?.id)}>Get Quote</Button>
+            }}/>
         </div>
     )
 }

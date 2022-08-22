@@ -10,6 +10,8 @@ import HomePage from './Pages/HomePage/HomePage';
 import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
 import Products from './Pages/Products/Products';
+import MainProductsPage from './Pages/MainProductsPage/MainProductsPage';
+import ProductDetail from './Pages/ProductDetail/ProductDetail';
 import Services from './Pages/Service/Service';
 
 const routes = [
@@ -33,9 +35,21 @@ const routes = [
     },
     {
         id: 1,
+        title: 'services',
+        component: MainProductsPage,
+        path: '/products'
+    },
+    {
+        id: 1,
         title: 'products',
         component: Products,
         path: '/products/:id'
+    },
+    {
+        id: 1,
+        title: 'products',
+        component: ProductDetail,
+        path: '/products/product/:id'
     },
     {
         id: 1,

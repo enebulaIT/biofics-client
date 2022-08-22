@@ -1,34 +1,39 @@
-import { useEffect, useState } from "react";
-import api from '../../../Api/publicApi';
+import { useEffect, useState } from 'react';
+import Hero2 from '../../Components/Hero/Hero2';
+import PageLoader from '../../Components/PageLoader/PageLoader';
+import api from '../../Api/publicApi';
 import { useNavigate } from 'react-router-dom';
-import bgLeavesImage from '../../../assets/images/bgLeaves.png';
-import classes from './FeaturedProducts.module.css';
-import Button from '@mui/material/Button';
+import bgLeavesImage from '../../assets/images/bgLeaves.png';
+import defaultInnerBannerImg from '../../assets/images/defaultInnerBanner.jpg';
+import { Button } from '@mui/material';
+import classes from './MainProductsPage.module.css';
 
-const FeaturedProducts = (props) => {
+
+
+const MainProductsPage = () => {
     const navigate = useNavigate();
 
-    const [productData, setProductData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [catData, setCatData] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
-            props.setLoading(true);
+            setLoading(true);
             try {
                 const response = await api.get(`/api/product-categories?populate=*`);
-                setProductData(response.data.data);
+                setCatData(response.data.data);
             } catch (err) {
                 console.log({ ...err });
             } finally {
-                props.setLoading(false);
+                setLoading(false);
             }
         }
         fetchData();
     }, []);
 
-
     const generateProductItems = () => {
         const elements = [];
-        productData.forEach((product, index) => {
+        catData.forEach((product, index) => {
             let dynamicClass = '';
             if (index % 2 === 0) dynamicClass = 'right';
             else dynamicClass = 'left'
@@ -55,22 +60,30 @@ const FeaturedProducts = (props) => {
         return elements;
     }
 
+    
     const handleEnquire = (id) => {
         navigate('/products/' + id);
     }
 
-    // const handleViewAll = () => {
-    //     console.log("Handles View all products action");
-    // }
-
-    if (productData?.length === 0) return null;
-
     return (
-        <div className={classes.products}>
-            {generateProductItems()}
-            {/* <Button className={classes.viewAll} disableRipple onClick={handleViewAll}>View All</Button> */}
-        </div>
+        <>
+            <div className={classes.banner}>
+                <Hero2 bannerData={{
+                    Title: 'Products',
+                    image: defaultInnerBannerImg
+                }} />
+            </div>
+            
+            <div className={classes.container}>
+                {loading && <PageLoader />}
+
+
+                <div className={`${classes.productsWrapper} ${classes.product_list}`}>
+                    {generateProductItems()}
+                </div>
+            </div>
+        </>
     )
 }
 
-export default FeaturedProducts;
+export default MainProductsPage;

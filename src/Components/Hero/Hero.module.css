@@ -55,13 +55,14 @@
 .hero2banner .title {
     font-size: 4em;
     font-weight: 900;
-    color: #FFF3D7;
+    color: #ADDA26;
     width: fit-content;
     margin: 0 auto;
 
     min-height: 500px;
     display: flex;
     align-items: center;
+    text-shadow: 2px 2px black;
 }
 
 
