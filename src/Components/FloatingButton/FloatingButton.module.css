@@ -3,7 +3,7 @@
     /* right: -77px; */
     right: 0;
     left: 100%;
-    top: 270px;
+    top: 50%;
     transition: all 0.2s ease-in 0s;
     z-index: 9999;
     cursor: pointer;
