@@ -11,6 +11,10 @@ import SignIn from './Pages/SignIn/SignIn';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import FloatingButton from './Components/FloatingButton/FloatingButton';
+import FloatingWhatsApp from 'react-floating-whatsapp';
+import img from './assets/images/shortLogo.jpg';
+import {PHONE} from './constants';
+
 
 function App() {
   const getRoutes = () => {
@@ -48,6 +52,8 @@ function App() {
         </BrowserRouter>
       </Suspense>
       <FloatingButton />
+      <FloatingWhatsApp phoneNumber={PHONE.P1_FOR_LINK} accountName="Biofics" avatar={img}/>
+
     </div>
     
   );
