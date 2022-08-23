@@ -9,7 +9,7 @@ import MoreDetailsModal from '../MoreDetailsModal/MoreDetailsModal';
 import appClasses from '../../../App.module.css';
 
 const SingleProduct = (props) => {
-    const { productData, productIndex } = props;
+    const { productData, productIndex, handleGetQuote } = props;
     const navigate = useNavigate();
 
     const [productImages, setProductImages] = useState([]);
@@ -86,14 +86,14 @@ const SingleProduct = (props) => {
 
                     <div className={classes.buttons}>
                         <Button className={appClasses.btn1} disableRipple onClick={handleOpen}>More Details</Button>
-                        <Button className={appClasses.btn1} disableRipple onClick={() => handleMoreDetails(productData?.id)}>Get Quote</Button>
+                        <Button className={appClasses.btn1} disableRipple onClick={() => handleGetQuote()}>Get Quote</Button>
                     </div>
                 </div>
             </div>
             <MoreDetailsModal handleClose = {handleClose} open = {open} modalData = {{
                 tite: productData?.attributes?.Title,
                 modalBody: productData?.attributes?.Description,
-                modalFooter: <Button className={appClasses.btn1} disableRipple onClick={() => handleMoreDetails(productData?.id)}>Get Quote</Button>
+                modalFooter: <Button className={appClasses.btn1} disableRipple onClick={() => handleGetQuote()}>Get Quote</Button>
             }}/>
         </div>
     )

@@ -10,6 +10,7 @@ import SignUp from './Pages/SignUp/SignUp';
 import SignIn from './Pages/SignIn/SignIn';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import FloatingButton from './Components/FloatingButton/FloatingButton';
 
 function App() {
   const getRoutes = () => {
@@ -46,7 +47,9 @@ function App() {
           </Routes>
         </BrowserRouter>
       </Suspense>
+      <FloatingButton />
     </div>
+    
   );
 }
 

@@ -6,6 +6,7 @@ import SingleProduct from './SingleProduct/SingleProduct';
 import classes from './ProductDetail.module.css';
 import { useParams } from 'react-router-dom';
 import defaultInnerBannerImg from '../../assets/images/defaultInnerBanner.jpg';
+import GetQuoteModal from '../../Components/GetQuoteModal/GetQuoteModal';
 
 
 const ProductDetail = () => {
@@ -15,6 +16,10 @@ const ProductDetail = () => {
     const [loading, setLoading] = useState(false);
     const [productsData, setProductData] = useState([]);
     const [subCatData, setSubCatData] = useState([]);
+
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -57,7 +62,7 @@ const ProductDetail = () => {
         productsData.forEach((product, index) => {
             if(productIds.includes(product?.id)) {
                 elements.push(
-                    <SingleProduct key={product.id} productData={product} productIndex={index} />
+                    <SingleProduct handleGetQuote = {handleOpen} key={product.id} productData={product} productIndex={index} />
                 );
                 console.log('product', product)
             }
@@ -83,6 +88,8 @@ const ProductDetail = () => {
                     {getProductElements()}
                 </div>
             </div>
+
+            <GetQuoteModal open = {open} handleClose = {handleClose}/>
         </>
     )
 }
