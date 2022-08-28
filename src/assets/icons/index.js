@@ -18,6 +18,7 @@ import DoneIcon from './done';
 import CityIcon from './city';
 import RecycleIcon from './recycle';
 import TestIcon from './test';
+import CloseIcon from './close';
 
 export {
     LinkedinIcon,
@@ -39,5 +40,6 @@ export {
     DoneIcon,
     CityIcon,
     RecycleIcon,
-    TestIcon
+    TestIcon,
+    CloseIcon
 }

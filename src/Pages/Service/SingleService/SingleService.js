@@ -3,16 +3,12 @@ import { Button } from "@mui/material";
 import appClasses from '../../../App.module.css';
 
 const SingleService = (props) => {
-    const { serviceData, productIndex } = props;
+    const { serviceData, productIndex, handleOpen } = props;
 
     const handleMoreDetails = () => {
 
     }
-
-    const getQuote = () => {
-
-    }
-
+    
     const allignMentClassName = productIndex % 2 === 0 ? '' : 'inverted';
     const marginClassName = productIndex % 2 === 0 ? 'mr-20' : 'ml-20';
 
@@ -21,7 +17,7 @@ const SingleService = (props) => {
             <div className={` ${classes.imagesContainer}  ${classes[marginClassName]}`}>
                 <div className={classes.item}>
                     <div className={classes.imageWrapper}>
-                        <img src={`${serviceData.attributes.Thumbnail.data.attributes.url}`} alt="Service" />
+                        <img src={`${serviceData.attributes.Thumbnail_Image.data.attributes.url}`} alt="Service" />
                     </div>
                 </div>
             </div>
@@ -40,7 +36,7 @@ const SingleService = (props) => {
 
                     <div className={classes.buttons}>
                         <Button className={`${appClasses.btn1}`} disableRipple onClick={handleMoreDetails}>More Details</Button>
-                        <Button className={appClasses.btn1} disableRipple onClick={getQuote}>Get Quote</Button>
+                        <Button className={appClasses.btn1} disableRipple onClick={handleOpen}>Get Quote</Button>
                     </div>
                 </div>
             </div>

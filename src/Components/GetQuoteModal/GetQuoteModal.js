@@ -6,6 +6,7 @@ import Form from './Form/Form';
 import { Button } from '@mui/material';
 import api from '../../Api/publicApi';
 import { toast } from 'react-toastify';
+import { CloseIcon } from '../../assets/icons';
 import classes from './GetQuoteModal.module.css';
 import appClasses from '../../App.module.css';
 
@@ -74,6 +75,9 @@ export default function GetQuoteModal(props) {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style} className={classes.modal}>
+                    <Button disableRipple className = {classes.closeIcon} onClick={handleClose}>
+                        <CloseIcon/>   
+                    </Button>
                     <Typography className={classes.title} id="modal-modal-title" variant="h6" component="h2">
                         Get Quote
                     </Typography>
