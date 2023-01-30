@@ -80,7 +80,15 @@
 .caseStudy {
     width: 100%;
     margin-left: 60px;
+    margin-top: 50px;
+}
 
-    display: flex;
-    align-items: center;
+@media only screen and (max-width: 1200px) {
+    .mapContainer {
+        flex-direction: column;
+    }
+
+    .caseStudy {
+        margin-left: 0;
+    }
 }

@@ -94,7 +94,7 @@ const MapSection = (props) => {
             </div>
 
             <div className={classes.caseStudy}>
-                <CaseStudy selectedStateData = {getSelectedStateData()}/>
+                <CaseStudy selectedStateData = {getSelectedStateData()} stateData = {stateData || {} } setSelected = {setSelected}/>
             </div>
         </div>
     )

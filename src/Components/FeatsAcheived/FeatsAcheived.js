@@ -29,7 +29,7 @@ const FeatsAcheived = (props) => {
         return (
             <div className={classes.stat}>
                 <div className={classes.number}>
-                    {foundFeat?.attributes?.Value + (foundFeat?.attributes?.Unit ?? '')} +
+                    {foundFeat?.attributes?.Value + (foundFeat?.attributes?.Unit ?? '')}
                 </div>
                 <div className={classes.description}>
                     {foundFeat?.attributes?.Title}

@@ -3,30 +3,19 @@ import Logo from '../../assets/images/Logo.png';
 import Cert1 from '../../assets/images/cert1.png';
 import Cert2 from '../../assets/images/cert2.png';
 import classes from './Footer.module.css';
-import { nav } from "../../nav";
+import { footerMenu } from "../../nav";
 import { Link } from "react-router-dom";
 import NewsLetterForm from '../../Components/NewsLetterForm/NewsLetterForm';
-import bgImage from '../../assets/images/bgFooter.png';
-import bgLeavesFooter from '../../assets/images/bgLeavesFooter.png';
-import commonClasses from '../../App.module.css';
-import useWindowDimensions from '../../utils/windowDimention';
 
 const Footer = () => {
-    const { width } = useWindowDimensions();
-
-    const styles = {
-      backgroundImage:
-        width <= 1024  ? `url(${bgLeavesFooter})` : `url(${bgImage})`,
-    };
-
     const generateMenu = () => {
-        return nav.map(link => {
+        return footerMenu.map(link => {
             return <Link key={link.id} to={link.to}>{link.label}</Link>
         })
     }
 
     return (
-        <div className={`${classes.footer} ${commonClasses.container}`} style = {styles}>
+        <div className={`${classes.footer}`}>
             <div className={classes.footerWrapper}>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={6} md={3} lg={3}>

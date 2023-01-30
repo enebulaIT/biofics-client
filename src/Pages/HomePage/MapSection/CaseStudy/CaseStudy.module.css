@@ -35,8 +35,7 @@
 
 .stats {
     margin-top: 40px;
-    display: flex;
-    justify-content: flex-start;
+    width: 30vw;
 }
 
 .statsWrapper {
@@ -54,4 +53,41 @@
     width: 75%;
     font-size: 0.9em;
     color: #7BB259;
+}
+
+.title > span {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.selectedState {
+    font-size: 1.2em;
+}
+
+.selectedState span {
+    font-size: 1.2em;
+}
+
+
+.notselectedState {
+    font-size: .65em;
+    color: #845B1B;
+    font-weight: 300;
+}
+
+.notselectedState span {
+    font-size: .7em;
+}
+
+.separator {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .stats {
+        width: 100vw;
+    }
 }

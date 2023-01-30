@@ -14,6 +14,7 @@ import FloatingButton from './Components/FloatingButton/FloatingButton';
 import FloatingWhatsApp from 'react-floating-whatsapp';
 import img from './assets/images/shortLogo.jpg';
 import {PHONE} from './constants';
+import ScrollToTop from './Components/ScrollToTop/ScrollToTop';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
       />
       <Suspense fallback={<Loading />}>
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path='/' element={<Layout />}>
               {getRoutes()}

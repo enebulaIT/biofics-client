@@ -25,14 +25,9 @@ const HomePage = () => {
                 <MapSection setLoading={setLoading} />
             </section>
 
-            {/* <section className={classes.problems}>
-                <Problems setLoading={setLoading} />
-            </section> */}
-
             <section className={`${classes.generalSection} ${commonClasses.container}`}>
-                <FeatsAcheived setLoading={setLoading} />
                 <FeaturedProducts setLoading={setLoading} />
-                <Services />
+                {/* <Services /> */}
             </section>
 
             <section className={`${classes.clients}`}>
@@ -42,8 +37,10 @@ const HomePage = () => {
 
 
             <section className={`${classes.videoplayer} ${commonClasses.container}`}>
+                <FeatsAcheived setLoading={setLoading} />
                 <VideoPlayer/>
             </section>
+            
         </div>
     )
 }

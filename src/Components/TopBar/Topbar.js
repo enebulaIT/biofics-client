@@ -6,12 +6,12 @@ const Topbar = () => {
     return (
         <div className={classes.topbar}>
             <div className={classes.content}>
-                <div className={classes.socials}>
+                {/* <div className={classes.socials}>
                     <a href={SOCIAL_URLS.IN}> <LinkedinIcon /> </a>
                     <a href={SOCIAL_URLS.FB}> <FacebookIcon /> </a>
                     <a href={SOCIAL_URLS.IG}> <InstagramIcon /> </a>
                     <a href={SOCIAL_URLS.TW}> <TwitterIcon /> </a>
-                </div>
+                </div> */}
 
                 <div className={classes.phone}>
                     <div>

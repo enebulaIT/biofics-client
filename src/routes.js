@@ -14,6 +14,7 @@ import MainProductsPage from './Pages/MainProductsPage/MainProductsPage';
 import ProductDetail from './Pages/ProductDetail/ProductDetail';
 import Services from './Pages/Service/Service';
 import ServiceDetailpage from './Pages/ServiceDetailspage/ServiceDetailpage';
+import FAQs from './Pages/FAQs/FAQs';
 
 const routes = [
     {
@@ -23,46 +24,52 @@ const routes = [
         path: '/'
     },
     {
-        id: 1,
+        id: 2,
         title: 'about',
         component: About,
         path: '/about'
     },
     {
-        id: 1,
+        id: 3,
         title: 'services',
         component: Services,
         path: '/services'
     },
     {
-        id: 1,
+        id: 4,
         title: 'service',
         component: ServiceDetailpage,
         path: '/service/:id'
     },
     {
-        id: 1,
+        id: 5,
         title: 'services',
         component: MainProductsPage,
         path: '/products'
     },
     {
-        id: 1,
+        id: 6,
         title: 'products',
         component: Products,
         path: '/products/:id'
     },
     {
-        id: 1,
+        id: 7,
         title: 'products',
         component: ProductDetail,
         path: '/products/product/:id'
     },
     {
-        id: 1,
+        id: 8,
         title: 'contact',
         component: Contact,
         path: '/contact'
+    },
+    {
+        id: 9,
+        title: 'faq',
+        component: FAQs,
+        path: '/faqs'
     }
 ]
 
