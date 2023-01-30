@@ -4,10 +4,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import classes from './Banner.module.css';
+import useAssumedDeviceType from '../../../utils/useAssumedDeviceType';
+import { useNavigate } from 'react-router-dom';
+
 
 const settings = {
-    dots: false,
-    arrows: false,
+    dots: true,
+    arrows: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -19,6 +22,9 @@ const settings = {
 
 const Banner = (props) => {
 
+    const { assumedDeviceType } = useAssumedDeviceType();
+    const navigate = useNavigate();
+
     const [bannerData, setBannerData] = useState([]);
 
     useEffect(() => {
@@ -26,7 +32,15 @@ const Banner = (props) => {
             props.setLoading(true);
             try {
                 const response = await api.get(`/api/banners?populate=*`);
-                setBannerData(response.data.data);
+                const bannerData = response?.data?.data || [] ;
+                const parsedBannerData = [];
+                
+                bannerData.forEach(banner => {
+                    if( banner.attributes.BannerSize === assumedDeviceType) {
+                        parsedBannerData.push(banner);
+                    }
+                });
+                setBannerData(parsedBannerData);
             } catch (err) {
                 console.log({ ...err });
             } finally {
@@ -34,54 +48,22 @@ const Banner = (props) => {
             }
         }
         fetchData();
-    }, [])
+    }, [assumedDeviceType]);
+
+    const handleClick = (event, link) => {
+        console.log(event)
+        if(link && link?.length) {
+            navigate(link);
+        }
+    }
 
     const generateBannerItems = () => {
         const elements = [];
 
         bannerData.forEach(banner => {
             elements.push(
-                // <div className={classes.item} key = {banner.id}>
-                //     <div className={classes.itemWrapper}>
-                //         <div className={classes.text}>
-                //             <div className={classes.title}>
-                //                 {banner.attributes.Title}
-                //             </div>
-                //             <div className={classes.description}>
-                //                 {banner.attributes.Description}
-                //             </div>
-                //         </div>
-
-                //         <div className={classes.image} style = {{
-                //             backgroundImage: `url(${bgLeavesImage})`,
-                //         }}>
-                //             <div className={classes.imageWraper}>
-                //                 <img src = {`${banner?.attributes?.BannerImage?.data?.attributes?.url}`}  alt = "banner"/>
-                //             </div>
-                //         </div>
-                //     </div>
-                // </div>
-
-                <div className={classes.item} key={banner.id}>
-                    <div className={classes.bannerImg} style={{ backgroundImage: `url(${banner?.attributes?.BackgroundImage?.data?.attributes?.url})` }}>
-
-                        <div className={`${classes.itemWrapper} ${classes[banner.attributes.ProductImagePlacement]}`}>
-                            <div className={classes.text}>
-                                <div className={classes.title}>
-                                    {banner.attributes.Title}
-                                </div>
-                                <div className={classes.description}>
-                                    {banner.attributes.Description}
-                                </div>
-                            </div>
-
-                            <div className={classes.image} >
-                                <div className={classes.imageWraper}>
-                                    <img src={`${banner?.attributes?.BannerImage?.data?.attributes?.url}`} alt="banner" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div className={classes.item} key={banner.id} onClick = {(event) => handleClick(event, banner?.attributes?.LinkToPage)}>
+                    <img src={`${banner?.attributes?.BannerImage?.data?.attributes?.url}`} alt="banner" />
                 </div>
             )
         });
@@ -91,7 +73,7 @@ const Banner = (props) => {
     if (bannerData.length === 0) return null;
 
     return (
-        <div>
+        <div className = "banner">
             <Slider {...settings}>
                 {generateBannerItems()}
             </Slider>

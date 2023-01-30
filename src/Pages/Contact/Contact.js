@@ -31,6 +31,8 @@ const Contact = () => {
   const inputFile = useRef(null);
   const { width } = useWindowDimensions();
 
+  console.log('width', width)
+
   const handleFileUpload = async (event) => {
     const file = event.target.files[0];
     setFile(file);

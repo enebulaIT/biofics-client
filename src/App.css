@@ -193,6 +193,17 @@ button.slick-arrow::before {
      outline: none;
    }
 
+/*Customizing homepage banner: Anirudha*/
+.banner .slick-next {
+     right: 30px;
+}
+
+.banner .slick-prev {
+     left: 30px;
+     z-index: 999;
+}
+/*Customizing homepage banner: Anirudha*/
+
 /* Added By ASHIT START */
 .slick-slide img {
      width: 100%;
