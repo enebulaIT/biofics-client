@@ -1,76 +1,77 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import api from '../../../Api/publicApi';
-import { useNavigate } from 'react-router-dom';
-import bgLeavesImage from '../../../assets/images/bgLeaves.png';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import classes from './FeaturedProducts.module.css';
-import Button from '@mui/material/Button';
+import commonClasses from '../../../App.module.css';
+import useWindowDimensions from '../../../utils/windowDimention';
+import FeaturedProduct from './FeaturedProduct';
+import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const FeaturedProducts = (props) => {
-    const navigate = useNavigate();
+  const [clientsData, setClientsData] = useState([]);
+  const { width } = useWindowDimensions();
+  const navigate = useNavigate();
 
-    const [productData, setProductData] = useState([]);
+  const slides = width <= 600 ? 1 : width > 600 && width <= 1024 ? 2 : 4;
 
-    useEffect(() => {
-        const fetchData = async () => {
-            props.setLoading(true);
-            try {
-                const response = await api.get(`/api/product-categories?populate=*`);
-                setProductData(response.data.data);
-            } catch (err) {
-                console.log({ ...err });
-            } finally {
-                props.setLoading(false);
-            }
-        }
-        fetchData();
-    }, []);
+  const settings = {
+    dots: false,
+    arrows: true,
+    infinite: true,
+    // speed: 500,
+    slidesToShow: slides,
+    slidesToScroll: 1,
+    // autoplay: true,
+    // autoplaySpeed: 2000,
+  };
 
+  useEffect(() => {
+    const fetchData = async () => {
+      props.setLoading(true);
+      try {
+        const response = await api.get(`/api/products?populate=*`);
+        setClientsData(response.data.data);
+      } catch (err) {
+        console.log({ ...err });
+      } finally {
+        props.setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
 
-    const generateProductItems = () => {
-        const elements = [];
-        productData.forEach((product, index) => {
-            let dynamicClass = '';
-            if (index % 2 === 0) dynamicClass = 'right';
-            else dynamicClass = 'left'
-            elements.push(
-                <div style={{
-                    backgroundImage: `url(${bgLeavesImage})`
-                }
-                } className={`${classes.singleProduct} ${classes[dynamicClass]}`}>
-                    <div className={classes.textContent}>
-                        <div className={classes.title}>
-                            {product.attributes.CategoryName}
-                        </div>
-                        <div className={classes.description} dangerouslySetInnerHTML = {{__html: product.attributes.Description}}>
-                        </div>
-                        <Button className={classes.action} disableRipple onClick={() => handleEnquire(product?.id)}>Read More</Button>
-                    </div>
-
-                    <div className={classes.imageContent}>
-                        <img alt="product" src={`${product?.attributes?.Image?.data?.attributes?.url}`} />
-                    </div>
-                </div >
-            )
-        });
-        return elements;
-    }
-
-    const handleEnquire = (id) => {
-        navigate('/products/' + id);
-    }
-
-    // const handleViewAll = () => {
-    //     console.log("Handles View all products action");
-    // }
-
-    if (productData?.length === 0) return null;
-
-    return (
-        <div className={classes.products}>
-            {generateProductItems()}
-            {/* <Button className={classes.viewAll} disableRipple onClick={handleViewAll}>View All</Button> */}
+  const generateClientsItems = () => {
+    const elements = [];
+    clientsData.forEach((client) => {
+      elements.push(
+        <div className={classes.item} key={client.id}>
+          <FeaturedProduct productData = {client}/>
         </div>
-    )
-}
+      );
+    });
+
+    return elements;
+  };
+
+  if (clientsData.length === 0) return null;
+
+  return (
+    <div className={classes.clients}>
+      <div className={commonClasses.pageTitle}>Our Products</div>
+
+      <div className={`${classes.clientWrapper} clients-page`}>
+        <Slider {...settings}>{generateClientsItems()}</Slider>
+      </div>
+
+        <div className={commonClasses.sectionBtn}>
+
+      <Button onClick={() => navigate('/products')} className={`${commonClasses.linkBtn}`}>Explore all</Button>
+        </div>
+    </div>
+  );
+};
 
 export default FeaturedProducts;

@@ -44,14 +44,8 @@ const Header = () => {
     }
 
 
-    // useEffect(() => {
-    //   console.log('hiiiiiii');
-    // }, [showSideBar])
-    
-
 
     const HideSideBar = (event) => {
-        console.log('event', event);
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
           }

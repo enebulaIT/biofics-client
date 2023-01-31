@@ -6,6 +6,8 @@ import SingleService from './SingleService/SingleService';
 import classes from './ServiceDetailpage.module.css';
 import { useParams } from 'react-router-dom';
 import GetQuoteModal from '../../Components/GetQuoteModal/GetQuoteModal';
+import defaultInnerBannerImg from '../../assets/images/defaultInnerBanner.jpg';
+
 
 
 const ServiceDetailpage = () => {
@@ -74,7 +76,7 @@ const ServiceDetailpage = () => {
             <div className={classes.banner}>
                 <Hero2 bannerData={{
                     Title: subCatData?.attributes?.Title,
-                    image: subCatData?.attributes?.Page_Banner_Image?.data?.attributes?.url
+                    image: subCatData?.attributes?.Page_Banner_Image?.data?.attributes?.url || defaultInnerBannerImg
                 }} />
             </div>
             

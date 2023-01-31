@@ -16,7 +16,6 @@ export default function useAssumedDeviceType() {
   const findAssumedDevice = () => {
     const { width } = getWindowDimensions();
 
-    console.log('width', width)
     if(width <= 600 ) setAssumedDeviceType('Mobile');
     else if(width <= 1200 && width > 600) setAssumedDeviceType('Tablet');
     else setAssumedDeviceType('Desktop');

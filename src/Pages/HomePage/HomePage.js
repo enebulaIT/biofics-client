@@ -3,9 +3,8 @@ import Banner from './Banner/Banner';
 import classes from './HomePage.module.css';
 import commonClasses from '../../App.module.css';
 import PageLoader from '../../Components/PageLoader/PageLoader';
-// import Problems from './Problems/Problems';
+import ProductCategories from './ProductCategories/ProductCategories';
 import FeaturedProducts from './FeaturedProducts/FeaturedProducts';
-import Services from './Services/Services';
 import OurClients from './OurClients/OurClients';
 import Testimonials from './Testimonials/Testimonials';
 import FeatsAcheived from '../../Components/FeatsAcheived/FeatsAcheived';
@@ -26,8 +25,11 @@ const HomePage = () => {
             </section>
 
             <section className={`${classes.generalSection} ${commonClasses.container}`}>
+                <ProductCategories setLoading={setLoading} />
+            </section>
+
+            <section className={`${classes.generalSection}`}>
                 <FeaturedProducts setLoading={setLoading} />
-                {/* <Services /> */}
             </section>
 
             <section className={`${classes.clients}`}>

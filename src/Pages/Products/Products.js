@@ -5,7 +5,7 @@ import api from '../../Api/publicApi';
 import SingleProduct from './SingleProduct/SingleProduct';
 import classes from './Products.module.css';
 import { useParams } from 'react-router-dom';
-
+import defaultInnerBannerImg from '../../assets/images/defaultInnerBanner.jpg';
 
 const Products = () => {
     const { id } = useParams();
@@ -71,7 +71,7 @@ const Products = () => {
             <div className={classes.banner}>
                 <Hero2 bannerData={{
                     Title: productsData?.attributes?.CategoryName,
-                    image: productsData?.attributes?.BannerImage?.data?.attributes?.url
+                    image: productsData?.attributes?.BannerImage?.data?.attributes?.url || defaultInnerBannerImg
                 }} />
             </div>
             

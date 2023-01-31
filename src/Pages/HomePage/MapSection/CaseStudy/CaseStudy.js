@@ -6,7 +6,6 @@ import { Grid } from '@mui/material';
 
 const CaseStudy = (props) => {
     const { selectedStateData } = props;
-    console.log('stateData', props.stateData)
 
     const getStateNames = () => {
        const HTML = [<span className={classes.selectedState}>{selectedStateData?.StateName} <span className={classes.separator}> | </span> </span>];

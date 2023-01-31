@@ -51,7 +51,6 @@ const Banner = (props) => {
     }, [assumedDeviceType]);
 
     const handleClick = (event, link) => {
-        console.log(event)
         if(link && link?.length) {
             navigate(link);
         }
