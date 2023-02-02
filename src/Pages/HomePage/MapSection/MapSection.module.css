@@ -71,10 +71,15 @@
 .mapContainer {
     position: relative;
     display: flex;
+    width: 100%;
 }
 
 .map {
-    height: 900px;
+    width: 1119px;
+}
+
+.map img{
+    max-width: 100%;
 }
 
 .caseStudy {
@@ -83,12 +88,160 @@
     margin-top: 50px;
 }
 
+
 @media only screen and (max-width: 1200px) {
+
+
     .mapContainer {
+        position: relative;
+        display: flex;
+        width: 72%;
         flex-direction: column;
     }
 
     .caseStudy {
         margin-left: 0;
+    }
+
+    .map {
+        width: 352px;
+    }
+
+    .area {
+        height: 2em;
+        width: 2em;
+        cursor: pointer;
+        background-clip: content-box !important;
+        border: 0.1875em solid transparent;
+        z-index: 2;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+    }
+
+
+    .jk {
+        left: 74px;
+        top: 47px;
+    }
+
+    .raj {
+        left: 58px;
+        top: 147px;
+    }
+
+    .guj {
+        left: 33px;
+        top: 195px;
+    }
+
+    .mp {
+        left: 113px;
+        top: 188px;
+    }
+
+    .mh {
+        left: 89px;
+        top: 235px;
+    }
+
+    .ka {
+        left: 83px;
+        top: 292px;
+    }
+
+    .teln {
+        left: 124px;
+        top: 250px;
+    }
+
+    .od {
+        left: 191px;
+        top: 217px;
+    }
+
+    .wb {
+        left: 225px;
+        top: 185px;
+    }
+
+    .up {
+        left: 143px;
+        top: 136px;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .map {
+        width: 100%;
+    }
+    .mapContainer {
+        flex-direction: column;
+        width: 352px;
+    }
+
+    .area {
+        height: 2em;
+        width: 2em;
+        cursor: pointer;
+        background-clip: content-box !important;
+        border: 0.1875em solid transparent;
+        z-index: 2;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+    }
+
+    .jk {
+        left: 74px;
+        top: 47px;
+    }
+
+    .raj {
+        left: 58px;
+        top: 147px;
+    }
+
+    .guj {
+        left: 33px;
+        top: 195px;
+    }
+
+    .mp {
+        left: 113px;
+        top: 188px;
+    }
+
+    .mh {
+        left: 89px;
+        top: 235px;
+    }
+
+    .ka {
+        left: 83px;
+        top: 292px;
+    }
+
+    .teln {
+        left: 124px;
+        top: 250px;
+    }
+
+    .od {
+        left: 191px;
+        top: 217px;
+    }
+
+    .wb {
+        left: 225px;
+        top: 185px;
+    }
+
+    .up {
+        left: 143px;
+        top: 136px;
     }
 }

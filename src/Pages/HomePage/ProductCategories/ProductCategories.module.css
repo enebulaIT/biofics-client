@@ -11,6 +11,9 @@
     height: 448px;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .singleProduct.right {
@@ -28,25 +31,7 @@
     width: 30%;
 }
 
-.singleProduct.right .textContent {
-    margin-left: 5%;
-}
-
-.singleProduct.right .imageContent {
-    margin-right: 5%;
-    width: 400px;
-    height: 400px;
-
-    display: flex;
-    align-items: center;
-}
-
-
-.singleProduct.left .textContent {
-    margin-right: 5%;
-}
-
-.singleProduct.left .imageContent {
+.imageContent {
     margin-left: 5%;
     width: 400px;
     height: 400px;
@@ -136,7 +121,7 @@ button.viewAll:hover {
     }
 
     .description {
-        font-size: 8px;
+        /* font-size: 8px; */
         margin-bottom: 8px;
     }
 
@@ -167,6 +152,10 @@ button.viewAll:hover {
     button.viewAll{
         font-size: 11px;
         padding-left: 0px;
+    }
+
+    div.singleProduct .imageContent {
+        width: 150px;
     }
 
 }

@@ -40,12 +40,11 @@ const MapSection = (props) => {
     if(stateData.length === 0) return null ;
     return (
         <div className={classes.mapContainer}>
-            <img src={map} alt="map" useMap='#interactiveMap' className={classes.map} />
 
-            <div>
+            <div className={classes.map}>
+                <img src={map} alt="map" useMap='#interactiveMap'  />
                 <map name='interactiveMap'>
                     <div className="dropdown fadeIn">
-                        {/* States */}
                         <area 
                             className={`${classes.jk} ${classes.area} ${selected === 'jk' ? classes.selected : ''}`} 
                             onClick={() => handleMarkerClicked('jk')} 
@@ -86,9 +85,6 @@ const MapSection = (props) => {
                             className={`${classes.up} ${classes.area} ${selected === 'up' ? classes.selected : ''}`} 
                             onClick={() => handleMarkerClicked('up')} 
                             alt="state" />
-
-                        {/* Cities */}
-                        {/*  */}
                     </div>
                 </map>
             </div>

@@ -87,7 +87,27 @@
 }
 
 @media only screen and (max-width: 1200px) {
+    .cities, .majorClients {
+        width: 100%;
+    }
+    
     .stats {
-        width: 100vw;
+        width: 100%;
+    }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .cities, .majorClients {
+        width: 100%;
+    }
+
+    .icon svg{
+        width: 40px;
+    }
+
+    .number {
+        font-size: 1.5em;
     }
 }

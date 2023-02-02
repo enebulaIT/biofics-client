@@ -14,8 +14,36 @@ const FeaturedProducts = (props) => {
   const [clientsData, setClientsData] = useState([]);
   const { width } = useWindowDimensions();
   const navigate = useNavigate();
+  const [slides, setSlides] = useState(0);
 
-  const slides = width <= 600 ? 1 : width > 600 && width <= 1024 ? 2 : 4;
+  // const slides = width <= 600 ? 1 : width > 600 && width <= 1024 ? 2 : 4;
+  console.log('width', width)
+  // let slides;
+  // switch(width) {
+  //   case width <= 600: 
+  //     slides = 1; 
+  //     break;
+  //   case width > 600 && width <= 1200: 
+  //     slides = 3; 
+  //     break;
+  //   case width > 1200: 
+  //     slides = 4; 
+  //     break;
+  //   default: slides = 2;
+  // }
+
+  useEffect(() => {
+    let slides;
+    if(width <= 600) {
+      slides = 1; 
+    } else if(width > 600 && width <= 1200) {
+      slides = 2; 
+    } else if(width > 1200) {
+      slides = 4; 
+    }
+    setSlides(slides)
+
+  }, [width])
 
   const settings = {
     dots: false,

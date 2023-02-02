@@ -58,7 +58,7 @@ const SingleProduct = (props) => {
     }
 
     const handleMoreDetails = (id) => {
-        navigate(`/products/product/${id}`)
+        navigate(`/products/product-detail/${id}`)
     }
 
     const allignMentClassName = productIndex % 2 === 0 ? '' : 'inverted';
@@ -85,7 +85,7 @@ const SingleProduct = (props) => {
                     </div>
 
                     <div className={classes.buttons}>
-                        <Button className={appClasses.btn1} disableRipple onClick={handleOpen}>More Details</Button>
+                        <Button className={appClasses.btn1} disableRipple onClick={() => handleMoreDetails(productData?.id)}>More Details</Button>
                         <Button className={appClasses.btn1} disableRipple onClick={() => handleGetQuote()}>Get Quote</Button>
                     </div>
                 </div>
