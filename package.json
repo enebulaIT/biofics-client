@@ -1,7 +1,7 @@
 {
   "name": "biofics-client",
   "version": "0.1.0",
-  "homepage": "https://enebulaIT.github.io/react-gh-pages",
+  "homepage": "https://enebulaIT.github.io/biofics-client",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.0",

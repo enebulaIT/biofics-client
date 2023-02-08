@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import routes from './routes';
 import Layout from './Layouts/Layout1/Layout1';
 import AuthLayout from './Layouts/AuthLayout/AuthLayout';
@@ -39,7 +39,7 @@ function App() {
         pauseOnHover
       />
       <Suspense fallback={<Loading />}>
-        <BrowserRouter>
+        <HashRouter>
           <ScrollToTop />
           <Routes>
             <Route path='/' element={<Layout />}>
@@ -51,7 +51,7 @@ function App() {
             </Route>
             <Route path='*' element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </Suspense>
       <FloatingButton />
       <FloatingWhatsApp phoneNumber={PHONE.P1_FOR_LINK} accountName="Biofics" avatar={img}/>
