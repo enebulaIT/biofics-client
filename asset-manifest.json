@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/biofics-client/static/css/main.f3438509.css",
-    "main.js": "/biofics-client/static/js/main.10840e1b.js",
+    "main.js": "/biofics-client/static/js/main.1f1bebd8.js",
     "static/js/787.d7eb8f82.chunk.js": "/biofics-client/static/js/787.d7eb8f82.chunk.js",
     "static/media/defaultInnerBanner.jpg": "/biofics-client/static/media/defaultInnerBanner.7a727f563838755bab95.jpg",
     "static/media/map.png": "/biofics-client/static/media/map.c91022fa9ef2df6adff4.png",
@@ -53,11 +53,11 @@
     "static/media/slick.woff": "/biofics-client/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/biofics-client/index.html",
     "main.f3438509.css.map": "/biofics-client/static/css/main.f3438509.css.map",
-    "main.10840e1b.js.map": "/biofics-client/static/js/main.10840e1b.js.map",
+    "main.1f1bebd8.js.map": "/biofics-client/static/js/main.1f1bebd8.js.map",
     "787.d7eb8f82.chunk.js.map": "/biofics-client/static/js/787.d7eb8f82.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f3438509.css",
-    "static/js/main.10840e1b.js"
+    "static/js/main.1f1bebd8.js"
   ]
 }
